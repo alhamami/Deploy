@@ -10,7 +10,6 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 import sys
 sys.path.insert(0, './yolov5')
 
-from yolov5.models.experimental import attempt_load
 from yolov5.utils.downloads import attempt_download
 from yolov5.models.common import DetectMultiBackend
 from yolov5.utils.datasets import LoadImages, LoadStreams
@@ -23,7 +22,6 @@ from deep_sort_pytorch.deep_sort import DeepSort
 import os
 import platform
 import shutil
-import time
 from pathlib import Path
 import cv2
 import torch
