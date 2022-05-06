@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+    <div class="container">
+
+        <img class="logo" src="/static/img/logo.png">
+        <form class="register_form" action="{{url_for('Info')}}"  method="POST">
+
+            <h1 class="form__title">Register</h1>
+
+            <div class="form__message form__message--error"></div>
+
+            
+
+                        
+            <div class="form__input-group">
+                <input style="width: 160px;" type="text" class="form__input" autofocus placeholder="Enter first name" name="firstName" id="firstName">
+                <input style="width: 160px;" type="text" class="form__input" autofocus placeholder="Enter last name" name="lastName" id="lastName">
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Enter username" name="username" id="username">
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <div class="form__input-group">
+                <input type="email" class="form__input" autofocus placeholder="Enter email" name="email" id="email">
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Enter password" name="password" id="password">
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Confirm password" name="cpassword" id="cpassword">
+            </div>
+            
+            <input type="button" class="register_button" value="NEXT">
+
+        </form>
+
+
+
+        <div class="background">
+            <img src="/static/img/image-11.png">
+        </div>
+        
+
+        <form action="{{url_for('index')}}">
+            <div class="exit" >
+              <img      height="35px" width="35px" src="/static/img/home.png">
+            </div>
+
+            <input class="exitbtn" type="submit" value="">
+        </form>
+
+
+    </div>
+
+
+</body>
+<script>
+
+     
+        function clickEvent(first,last){
+			if(first.value.length){
+				document.getElementById(last).focus();
+			}
+		}
+
+
+        var usernameIseExists = null;
+        var emailIseExists = null;
+
+        $(function() {
+        $('#username').blur(function(){
+        var username = $(this).val();
+        $.ajax({
+            url: '/check_username',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                if(response == 'Ok'){
+                    var username = document.getElementById("username")
+                    var usernameSpace = /\s/g.test($('[id$=username]').val());
+                    if(usernameSpace){
+                        $("input[name='username']").css("border-color","red");
+                    }else if(username.value == ""){
+                        $("input[name='username']").css("border-color","red");
+                    }else{
+                        $("input[name='username']").css("border-color","green");
+                        usernameIseExists = false;
+                    }
+                }else{
+                    $("input[name='username']").css("border-color","red");
+                    usernameIseExists = true;
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+            });
+        });
+    }); 
+
+
+    $(function() {
+        $('#email').blur(function(){
+        var username = $(this).val();
+        $.ajax({
+            url: '/check_email',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                if(response == 'Ok'){
+                    var email = document.getElementById("email")
+                    var emailSpace = /\s/g.test($('[id$=email]').val());
+                            
+                    var checkEmail = String(email.value).toLowerCase()
+                        .match(
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    );
+
+                    if(emailSpace){
+                        $("input[name='email']").css("border-color","red");
+                    }else if(email.value == ""){
+                        $("input[name='email']").css("border-color","red");
+                    }else if(checkEmail == null){
+                        $("input[name='email']").css("border-color","red");
+                    }else{
+                        $("input[name='email']").css("border-color","green");
+                        emailIseExists = false;
+                    }
+                }else{
+                    $("input[name='email']").css("border-color","red");
+                    emailIseExists = true;
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+            });
+        });
+    }); 
+
+
+
+    $(document).on('click', '.register_button', function() {
+
+
+        var firstName = document.getElementById("firstName")
+        var lastName = document.getElementById("lastName")
+        var username = document.getElementById("username")
+      
+        var password = document.getElementById("password")
+        var cpassword = document.getElementById("cpassword")
+
+        var firstNameSpace = /\s/g.test($('[id$=firstName]').val());
+        var lastNameSpace = /\s/g.test($('[id$=lastName]').val());
+        var usernameSpace = /\s/g.test($('[id$=username]').val());
+        var emailSpace = /\s/g.test($('[id$=email]').val());
+        var passwordSpace = /\s/g.test($('[id$=password]').val());
+        var cpasswordSpace = /\s/g.test($('[id$=cpassword]').val());
+
+
+        let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')            
+
+        
+        
+        var checkEmail = String(email.value).toLowerCase()
+            .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+
+        if(firstNameSpace){
+            alert("First name must not contain a space");
+        }else if(lastNameSpace){
+            alert("Last name must not contain a space");
+        }else if(usernameSpace){
+            alert("Username must not contain a space");
+        }else if(emailSpace){
+            alert("Email must not contain a space");
+        }else if(passwordSpace){
+            alert("Password must not contain a space");
+        }else if(cpasswordSpace){
+            alert("Confirm password must not contain a space");
+        }else if(firstName.value == ""){
+            alert("You must enter the first name !");
+        }else if(lastName.value == ""){
+            alert("You must enter the last name !");
+        }else if(username.value == ""){
+            alert("You must enter the user !");
+        }else if (usernameIseExists){
+            alert("This username is already exists !");
+        }else if(email.value == ""){
+            alert("You must enter the email !");
+        }else if (emailIseExists){
+            alert("This email is already exists !");
+        }else if(checkEmail == null){
+            alert("The email is invalid !");
+        }else if(password.value == ""){
+            alert("You must enter the password !");
+        }else if ((password.value.indexOf(' ') >= 0) || (cpassword.value.indexOf(' ') >= 0)) {
+            alert("Password must not contain space");
+        }else if(password.value.length < 8){
+            alert("Password must contain at least 8 character's");
+        }else if(!strongPassword.test(password.value)) {
+            alert("Password must contain at least one capital letter, symbol and number");
+        }else if(cpassword.value == ""){
+            alert("You must enter the confirm password !");
+        }else if(password.value != cpassword.value ){
+            alert("Password does not match !");
+        }else {
+            $("input[class='register_button']").prop("type", "submit");
+        }
+
+     });
+
+
+
+
+     
+
+    
+        var size = (((window.screen.width - window.screen.height ) / 100 ) / 0.1)
+        plus  =  ((1.7 / 100 ) * 1000) - 5
+        if (window.screen.width> 2000){
+            size = size - plus
+        }else{
+            size = size - plus + 3
+        }
+
+        $("html").css("zoom",size+"%")
+      
+
+</script>

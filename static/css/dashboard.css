@@ -1,0 +1,2493 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');  
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+
+
+
+
+body{
+    background-color: #F7F7F7;
+    zoom: 100%;
+    min-height: 100%;
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+}
+
+.table1{
+    position: relative;
+    left: 100%;
+    top: 100%;
+}
+
+.VerContainer{
+    width: 130px;
+    height: 1750px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+    position: absolute;
+    left: 0%;
+    top: 0px;
+}
+
+.content-1{
+    position: relative;
+    left: 0px;
+    top: -26px;
+}
+
+.HorContainer{
+    width: 2620px;
+    height: 130px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+    position: absolute;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 28px;
+    top: 40px;  
+}
+
+.dot {
+    position: absolute;
+    left: 48px;
+    top: 180px;  
+}
+
+.dash {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 45px;
+    top: 220px;  
+}
+
+.dashboard{
+    background-color: #00000002;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 45px;
+    top: 220px;  
+    cursor: pointer; 
+}
+
+
+.video {
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    left: 43px;
+    top: 290px;  
+}
+
+.videoInput{
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    left: 45px;
+    top: 290px;  
+    cursor: pointer; 
+}
+
+.site {
+    width: 35px;
+    height: 33px;
+    position: absolute;
+    left: 43px;
+    top: 365px;  
+}
+
+.siteInput{
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 42px;
+    top: 365px;  
+    cursor: pointer; 
+}
+
+
+
+
+.menu {
+    position: absolute;
+    left: 168px;
+    top: 60px;  
+}
+
+.grid{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 1980px;
+    top: 58px;  
+}
+
+
+.bell{
+    width: 24px;
+    height: 29px;
+    position: absolute;
+    left: 2050px;
+    top: 56px;  
+}
+
+.dot2 {
+    position: absolute;
+    left: 2130px;
+    top: 54px;  
+}
+
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:"Kimberley", sans-serif;
+    height: 27px;
+    color: #24A9E2;
+    position: absolute;
+    top: 48px;
+    right: -2115px;
+    direction:rtl;
+    text-align:justify;
+}
+
+.logout{
+    font-size: 15px;
+    font-weight: bold;
+    height: 27px;
+    font-family:"Kimberley", sans-serif;
+    color: #000000;
+    position: absolute;
+    top: 33px;
+    right: -1061px;
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #00000000;
+    border-color: #00000000;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}
+
+
+.user{
+    width: 65px;
+    height: 65px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #24A9E2;
+    position: absolute; 
+    top: 34px;
+    right: -2200px;
+    border-radius: 25px;
+}
+
+
+.box1 {
+    width: 2200px;
+    height: 300px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #DEDFDF;
+    position: absolute; 
+    top: 200px;
+    right: -2250px;
+}
+
+.header1 {
+    width: 2200px;
+    height: 10px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #E6E6E6;
+    position: absolute; 
+    top: 200px;
+    right: -2250px;
+}
+
+.TIME_PERIOD{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #000000;
+    position: absolute; 
+    top: 240px;
+    right: -1190px;
+}
+
+.date1 {
+    width: 231px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    position: absolute; 
+    top: 396px;
+    right: -1581px;
+    border-radius: 25px;
+    border-color:rgb(139, 192, 245);
+    font-weight: bold;
+}
+  
+input[class="date1"]:focus{
+    border-color:rgb(139, 192, 245);
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+.fDate{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #363636;
+    position:absolute; 
+    top: 340px;
+    right: -1410px;
+}
+
+.date2 {
+    width: 231px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    position:absolute; 
+    top: 396px;
+    right: -1981px;
+    border-radius: 25px;
+    border-color:rgb(139, 192, 245);
+    font-weight: bold;
+}
+
+input[class="date2"]:focus{
+    border-color:rgb(139, 192, 245);
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+
+.tDate{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #363636;
+    position:absolute; 
+    top: 340px;
+    right: -1765px;
+}
+
+.siteLabel2{
+    width: 284px;
+    background-color: #ffffff;
+    font-family: "Kimberley", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 441px;
+    left: 552px;
+}
+
+.FILTER{
+    width: 180px;
+    height: 50px;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    font-size: 20px;    
+    border-radius:31px;
+    color: #ffffff;
+    background-color: #6C8298;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    cursor:pointer;
+    position:absolute; 
+    top: 498px;
+    right: -1740px;
+}
+
+.FILTER:hover {
+    background-color: #5daeff;
+    color:white;
+ }
+
+.dateBox1{
+    width: 280px;
+    height: 65px;
+    background: #ffffff;
+    border-radius:31px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 1514px;
+    top: 390px;
+ }
+
+.dateBox2{
+    width: 280px;
+    height: 65px;
+    background: #ffffff;
+    border-radius:31px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 1914px;
+    top: 390px;
+ }
+  
+.line1 {
+    display: block;
+    width: 5px;
+    height: 190px;
+    position:absolute; 
+    top: 340px;
+    right: -1100px;
+}
+
+
+
+.btn{  
+    width: 185%;  
+    height: 60px;  
+    cursor: pointer;  
+    display: flex;  
+    position: absolute;
+    top: 420px;
+    right: -710px;
+    font-size: 20px;
+    font-weight: bold;
+}  
+ 
+.btn::before{  
+    content: 'Select Site';  
+    display: flex;  
+    align-items: center;  
+    width: 100%;  
+    height: 100%;  
+    background: white;  
+    border-radius: 5px;  
+    border: 2px solid #6DBCDB;  
+    padding-left: 1em;  
+    background: linear-gradient(to right, white 80%, #6DBCDB 20%);  
+    border-radius: 40px;
+}  
+ 
+input[class=btn]:focus{
+     border-color:dodgerBlue;
+    
+}
+ 
+ 
+.btn::after{  
+    content: "⮟";
+    position: absolute;  
+    right: 0;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    font-family: 'Font Awesome 5 Free';  
+    font-weight: 700;  
+    width: 20%;  
+    height: 110%;  
+    color: white;  
+    transform: rotate(180deg);  
+    transition: all .4s;  
+    border-radius: 40px;
+}  
+ 
+.btn:checked::after{  
+    transform: rotate(0deg);  
+} 
+ 
+.select_site{  
+    margin-top: 0.5em;  
+    width: 185%;  
+    height: 330%; 
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);  
+    flex-direction: column;  
+    transition: all .4s; 
+    position: absolute;
+    top: 490px;
+    right: -707px;
+    
+ }  
+ 
+input:checked ~ .select_site{  
+    clip-path: none;  
+    
+}  
+ 
+.select_site a{  
+    height: 25%;  
+    display: flex;  
+    align-items: center;  
+    padding: 0.3em 0 0.3em 1em;  
+    text-decoration: none;  
+    margin: 0.3em 0;  
+    background: white;  
+    color: rgb(36, 36, 36);  
+    border-radius: 5px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.062);  
+    transition: background .4s;  
+    border-radius: 40px;
+ }  
+ 
+ .select_site a:hover{  
+    background: #6DBCDB;  
+    color: white;  
+    
+} 
+
+.sSite{
+    width: 400px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Kimberley", sans-serif;
+    background-color: #ff000000;
+    border: #000000;
+    cursor: pointer; 
+    position: absolute;
+    direction:rtl;
+    left: -15px;
+}
+
+.space{
+    padding: 0.1%;
+}
+
+
+
+.selectSite1{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    width: 100%;
+    height: 30px;
+    color: #363636;
+    position: absolute;
+    top: 380px;
+    right: -550px;
+ 
+}
+
+.dateLine {
+    display: block;
+    background-color: #ffffff;  
+    border-radius: 0px;  
+    width: 260px;
+    height: 55px;
+    border-radius: 0px 3px 25px 0px;  
+    position:absolute; 
+    top: 320px;
+    right: -230px;
+}
+
+.currentDate{
+    font-size: 21px;
+    font-weight: bold;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #3099ca;
+    position: absolute;
+    top: 336px;
+    right: -221px;
+}
+
+.visitors_number{
+    width: 355px;
+    height: 445px;
+    position: absolute;
+    top: 620px;
+    right: -305px;
+}
+
+.spent{
+    width: 355px;
+    height: 445px;
+    position: absolute;
+    top: 620px;
+    right: -670px;
+}
+
+.most_site{
+    width: 355px;
+    height: 445px;
+    position: absolute;
+    top: 620px;
+    right: -1035px;
+}
+
+
+.fewest_site{
+    width: 355px;
+    height: 445px;
+    position: absolute;
+    top: 620px;
+    right: -1400px;
+}
+
+
+
+.nbTotal{
+    display: block;
+    font-size: 27px;
+    font-weight: bold;
+    width: 100%;
+    font-family: "Kimberley", sans-serif;
+    color: #6DBCDB;
+    position: absolute;
+    top: 920px;
+    right: -235px;
+    text-align:center;
+ }
+
+.avgspent{
+    display: block;    
+    font-size: 27px;
+    font-weight: bold;
+    margin: -42%;
+    font-family: "Kimberley", sans-serif;
+    color: #ffffff;
+    position: absolute;
+    top: 1005px;
+    right: -440px;
+    text-align:center;
+ }
+
+.mostVistors{
+    width: 100%;
+    display: block;
+    font-size: 27px;
+    font-weight: bold;
+    margin: -52%;
+    font-family: "Kimberley", sans-serif;
+    color: #ffffff;
+    position: absolute;
+    top: 1030px;
+    right: -851px;
+    text-align:center;
+
+ }
+
+.fewestVistors{
+    width: 100%;
+    display: block;    
+    font-size: 27px;
+    font-weight: bold;
+    margin: 38%;
+    font-family: "Kimberley", sans-serif;
+    color: #ffffff;
+    position: absolute;
+    top: 844px;
+    right: -1405px;
+    text-align:center;
+ }
+
+
+.box4 {
+    width: 740px;
+    height: 347px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #DEDFDF;
+    position: absolute;
+    top: 622px;
+    right: -2250px;
+
+}
+
+.header4 {
+    width: 740px;
+    height: 10px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #E6E6E6;
+    position: absolute;
+    top: 622px;
+    right: -2250px;
+}
+
+.FIVE_DAYS{
+    font-size: 28px;
+    font-family: "Kimberley", sans-serif;
+    width: 700px;
+    color: #000000;
+    position: absolute;
+    top: 633px;
+    right: -2297px;
+}
+
+.MOST_DAYS{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    height: 30px;
+    color: #000000;
+    position: absolute;
+    top: 750px;
+    right: -1660px;
+}
+
+.FEWEST_DAYS{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    height: 30px;
+    color: #000000;
+    position: absolute;
+    top: 750px;
+    right: -2080px;
+}
+
+.M_DAY1{
+    font-size: 30px; 
+    display: block;
+    padding: 5px;
+    font-family: "Kimberley", sans-serif;
+    color: #117A09;
+    position: absolute;
+    top: 810px;
+    right: -1755px;
+    text-align: center;
+
+}
+
+.F_DAY1{
+    font-size: 30px;
+    display: block;
+    padding: 5px;
+    width: 290px;
+    font-family: "Kimberley", sans-serif;
+    color: #D63E43;
+    position: absolute;
+    top: 810px;
+    right: -2180px;
+    text-align: center;
+}
+
+.fiveDaysLine{
+    display: block;
+    width: 5px;
+    height: 270px;
+    position: absolute;
+    top: 747px;
+    right: -1830px;
+}
+
+.avgChart-1{
+    width: 700px;
+    max-width: 700px;
+    height: 500px;
+    max-height: 500px;
+    position: absolute;
+    top: 1150px;
+    right: -665px;
+}
+
+.chart-1{
+    width: 700px;
+    height: 550px;
+    background: #ffffff;
+    position: absolute; 
+    top: 1100px;
+    right: -665px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.chartLine-1{
+    display: block;
+    width: 700px;
+    background-color: #cccccc;
+    height: 2px;
+    position: absolute;
+    top: 1175px;
+    right: -665px;
+}
+
+.avgVisitors-1{
+    font-size: 20px;
+    font-family: "Kimberley", sans-serif;
+    position: absolute;
+    top: 1130px;
+    right: -310px;
+}
+
+
+.avgChart-2{
+    width: 1520px;
+    max-width: 1520px;
+    height: 500px;
+    position: absolute;
+    top: 1150px;
+    right: -2235px;
+}
+
+.chart-2{
+    width: 1520px;
+    height: 550px;
+    background: #ffffff;
+    position: absolute; 
+    top: 1100px;
+    right: -2235px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.chartLine-2{
+    display: block;
+    width: 1520px;
+    background-color: #cccccc;
+    height: 2px;
+    position: absolute;
+    top: 1175px;
+    right: -2235px;
+}
+
+.avgVisitors-2{
+    font-size: 20px;
+    font-family: "Kimberley", sans-serif;
+    position: absolute;
+    top: 1130px;
+    right: -1086px;
+}
+
+.selectSite2{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    width: 100%;
+    height: 30px;
+    color: #363636;
+    position: absolute;
+    top: 550px;
+    right: -570px;
+}
+
+.VIDEO_MANAGEMENT{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #000000;
+    position: absolute; 
+    top: 240px;
+    right: -1300px;
+}
+
+.box5 {
+    width: 2200px;
+    height: 1260px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #DEDFDF;
+    position: absolute; 
+    top: 200px;
+    right: -2250px;
+}
+
+.header5 {
+    width: 2200px;
+    height: 10px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #E6E6E6;
+    position: absolute; 
+    top: 200px;
+    right: -2250px;
+}
+
+
+.sTimeFrame {
+    width: 130%;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-color: white;
+    font-weight: bold;
+    padding: 17px;
+    padding-right: 55px;
+    padding-left: 55px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-color:rgb(139, 192, 245);
+    position: absolute; 
+    top: 420px;
+    right: -730px;
+}
+
+input[class=sTimeFrame]:focus{
+    border-color:rgb(139, 192, 245);
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+.start_time_frame{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #363636;
+    position: absolute; 
+    top: 370px;
+    right: -433px;
+}
+
+
+.eTimeFrame {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-color: white;
+    font-weight: bold;
+    padding: 20px;
+    padding-right: 55px;
+    padding-left: 55px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position: absolute; 
+    top: 240px;
+    right: -1240px;
+
+}
+
+input[class=eTimeFrame]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+
+
+.end_time_frame{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #363636;
+    position: absolute; 
+    top: 240px;
+    right: -1240px;
+}
+
+.video_line1 {
+    width: 5px;
+    height: 390px;
+    position: absolute; 
+    top: 240px;
+    right: -1240px;
+}
+
+.video_line2 {
+    background-color: #ffffff;
+    width: 2264px;
+    height: 5px;
+    position: absolute; 
+    top: 800px;
+    right: -2234px;
+}
+
+.upload {
+    width: 225px;
+    height: 295px;
+    position: absolute; 
+    top: 420px;
+    right: -1740px;
+}
+
+.ADD_VIDEO{
+    width: 240px;
+    height: 50px;
+    margin-top: 100gpx;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff00;
+    background-color: #2280b600;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0);
+    position: absolute; 
+    top: 240px;
+    right: -1240px;
+    border: #00000000;
+}
+
+
+.UPLOAD_VIDEO{
+    width: 200px;
+    height: 50px;
+    margin-top: 100px;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color:  #555;
+    background-color: #999;
+    box-shadow: 0 0 40px #00000033;
+    cursor: not-allowed;
+    border-radius:31px;;
+    position: absolute; 
+    top: 620px;
+    right: -2205px;
+}
+
+
+.choose_file{
+    opacity: 0;
+    width: 195px;
+    height: 145px;
+    background-color: #000000;
+    cursor:pointer;
+    position: absolute; 
+    top: 446px;
+    right: -1715px;
+ }
+
+.video_line{
+    display: block;
+    width: 5px;
+    height: 390px;
+    position:absolute; 
+    top: 340px;
+    right: -1130px;
+}
+
+.videoFile{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    width: 100%;
+    height: 30px;
+    color: #363636;
+    position: absolute;
+    top: 350px;
+    left: 1410px;
+}
+
+.videoName{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    width: 500px;
+    height: 30px;
+    font-weight: bold;
+    color: #1a9c87;
+    position: absolute;
+    top: 350px;
+    left: 1585px;
+}
+
+.videoTitle{
+    width: 1273px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 15px;
+    background-color: #e2e2e2;
+    color: #023c53;
+    font-family: "Kimberley", sans-serif;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    font-size: 27px;
+    font-weight: bold;
+    position: absolute; 
+    top: 860px;
+    right: -1761px;
+}
+
+.deleteVideoSite{
+    height: 40px;
+    font-size: 25px;
+    background-color: #00000000;
+    border-color: #00000000;
+    cursor: pointer;
+    position: absolute;
+    left: 1190px;
+}
+
+
+
+.videoSite{
+    width: 1250px;
+    height: 420px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #c3c3c3;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    border: 32px;
+    position: absolute; 
+    top: 945px;
+    right: -1777px;
+}
+
+
+.videoList{
+    font-family: "Kimberley", sans-serif;
+    color: #000000;
+    font-size: 35px;
+    width: 1270px;
+    height: 485px;
+    overflow-y: scroll;
+    position: absolute; 
+    top: 960.5px;
+    right: -1761px;
+}
+
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+
+
+.videoDiv{
+    position: relative;
+    top: 11px;
+}
+
+.videos{
+    text-align: center;
+    width: 20.2%;
+    height: 45px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    position: absolute; 
+    left: 300px;
+    border-color: #ffd5ce;
+
+}
+
+.enterVideoName{
+    text-align: center;
+    width: 19.5%;
+    height: 39px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    position: absolute; 
+    left: 300px;
+    border-color: #ffd5ce;
+}
+
+.enterDate{
+    text-align: center;
+    width: 19.7%;
+    height: 41px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    position: absolute; 
+    left: 300px;
+    border-color: #ffd5ce;
+}
+
+.updateVideoName{
+    height: 45px;
+    width: 45px;
+    background-color: #cda7ff60;
+    border-color: #e4d0ff;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    left: 690px;
+ 
+}
+
+.updateVideoName:hover {
+    background-color: #f1e6ff;
+    color:white;
+ }
+
+
+.updateVideoDate{
+    height: 45px;
+    width: 45px;
+    background-color:  #ff59c86b;
+    border-color: #fbb5e4;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    left: 820px;
+}
+
+.updateVideoDate:hover {
+    background-color:  #ffdff4;
+    color:white;
+ }
+
+
+.changeVideoSite{
+    text-align: center;
+    width: 20%;
+    height: 45px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    position: absolute; 
+    left: 300px;
+    border-color: #ffd5ce;
+}
+
+.changeVideoSiteBtn{
+    height: 45px;
+    width: 45px;
+    background-color: #82d7ff70;
+    font-family: "Kimberley", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    border-color: #cbefff;;
+    position: absolute;
+    left: 950px;
+}
+
+.changeVideoSiteBtn:hover {
+    background-color: #b4e7ff;
+    color:white;
+ }
+
+.back{
+    height: 25px;
+    width: 35px;
+    background-color: #00000000;
+    border-color: #00000000;
+    cursor: pointer;
+    visibility: hidden;
+    font-family: "Kimberley", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    left: 1085px;
+    top: 10px;
+}
+
+
+
+.delPermission:hover {
+    background-color: #ff0000;
+    color:white;
+ }
+
+.deleteSite{
+    height: 40px;
+    font-size: 25px;
+    background-color: #00000000;
+    border-color: #00000000;
+    cursor: pointer;
+    position: absolute;
+    left: 1595px;
+}
+
+.updateSiteName{
+    text-align: left;
+    width: 19.5%;
+    height: 39px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    border-color: #ffd5ce;
+    position: absolute;
+    right: 1330px;
+    top: 1px;
+}
+
+.editSite{
+    height: 50px;
+    width: 50px;
+    background-color:#d0fcff85;
+    border-color: #d0eeff;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 25px;
+    position: absolute;
+    top: 1px;
+    right: 1250px;
+}
+
+.editSite:hover {
+    background-color: #ffffff;
+    color:white;
+ }
+
+.editSiteDone{
+    height: 45px;
+    width: 50px;
+    background-color:#b3aaaa;
+    border-color: #d0eeff00;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 22px;
+    position: absolute;
+    top: 1px;
+    right: 1330px;
+}
+
+.backSite{
+    height: 25px;
+    width: 35px;
+    cursor: pointer;
+    position: absolute;
+    left: 367px;
+    top: 15px;
+}
+
+
+.exitAdmin{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 80px;
+    top: 0px;
+}
+
+.exitAdminSubmit{
+    width: 45px;
+    height: 45px;
+    background-color: #00000000;
+    border-color: #00000000;
+    cursor: pointer;
+    position: absolute;
+    right: 80px;
+    top: 0px;
+}
+
+
+.deletedSiteName{
+    visibility: hidden;
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+}
+
+
+
+.box2 {
+    width: 2200px;
+    height: 1500px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #DEDFDF;
+    position: absolute; 
+    top: 200px;
+    right: -2250px;
+}
+
+.header2 {
+    width: 2200px;
+    height: 10px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #E6E6E6;
+    position: absolute; 
+    top: 200px;
+    right: -2250px;
+}
+
+.SITE_MANAGEMENT{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #000000;
+    position: absolute; 
+    top: 240px;
+    right: -1280px;
+}
+
+.siteAdmin{
+    width: 1650px;
+    height: 420px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #c3c3c3;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    border: 32px;
+    position: absolute; 
+    top: 581px;
+    right: -1977px;
+}
+
+.siteUserDiv{
+    width: 790px;
+    height: 420px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #c3c3c3;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    border: 2px;
+    position: absolute; 
+    top: 1150px;
+    right: -1117px;
+}
+
+.btn2{
+    visibility: hidden;
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+    position: absolute;
+    top: 23px;
+    right: -747px;
+}
+
+
+.create_new_site {
+    font-size: 20px;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    height: 30px;
+    color: #000000;
+    position: absolute; 
+    top: 400px;
+    right: -1073px;
+}
+
+
+.create_site{
+    width: 200%;  
+    height: 60px;  
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    border:2px solid #6DBCDB;
+    border-radius:21px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+    position: absolute; 
+    top: 430px;
+    right: -1310px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+  
+input[class=create_site]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+.create_site_btn{
+
+  position: relative;
+  float: right;
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  font-family: "Kimberley", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #458d3b;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border-top-right-radius: 21px ;
+  border-bottom-right-radius: 21px ;
+  border-top-left-radius: 0px ;
+  border-bottom-left-radius: 0px ;
+  position: absolute; 
+  top: 438px;
+  right: -1440px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}  
+
+
+
+.adminListTitle{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 15px;
+    background-color: #e2e2e2;
+    color: #023c53;
+    font-family: "Kimberley", sans-serif;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute; 
+    top: 534px;
+    right: -471px;
+}
+
+
+.adminList{
+    font-family: "Kimberley", sans-serif;
+    color: #000000;
+    font-size: 35px;
+    width: 1670px;
+    height: 485px;
+    overflow-y: scroll;
+    position: absolute; 
+    top: 595px;
+    right: -1961px;
+}
+
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+
+
+
+.adminDiv{
+    display: none;
+    position: absolute; 
+    top: 735px;
+    right: -1500px;
+}
+
+
+.adminSitesDiv{
+    position: relative;
+    top: 11px;
+}
+
+.inviteUser{
+    text-align: center;
+    width: 19.5%;
+    height: 39px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    border-color: #ffd5ce;
+    position: absolute; 
+    top: 1px;
+    right: 850px;
+}
+
+.adminPermission{
+    text-align: center;
+    height: 47px;
+    width: 47px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: #c2fdff71;
+    border-color: #ffd5ce;
+    position: absolute;
+    left: 841px;
+ 
+}
+
+.adminPermission:hover {
+    background-color: #ffffff;
+    color:white;
+ }
+
+
+.userPermission{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    background-color: #c2fdff71;
+    border-color: #ffd5ce;
+    position: absolute;
+    left: 920px;
+ 
+}
+
+.userPermission:hover {
+    background-color: #ffffff;
+    color:white;
+}
+
+
+.delUser{
+    height: 45px;
+    width: 330px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    position: absolute; 
+    right: 280px;
+}
+
+.delPermission{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 23px;
+    border-radius: 10px;
+    background-color: #ffc2c271;
+    border-color: #ffd5ce;
+    position: absolute;
+    left: 1413px;
+ 
+}
+
+.delPermission:hover {
+    background-color: #ffffff;
+    color:white;
+ }
+
+.deleteSite{
+    height: 40px;
+    font-size: 25px;
+    background-color: #00000000;
+    border-color: #00000000;
+    cursor: pointer;
+    position: absolute;
+    left: 1595px;
+}
+
+
+
+.exitAdmin{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 80px;
+    top: 0px;
+}
+
+.exitAdminSubmit{
+    width: 45px;
+    height: 45px;
+    background-color: #00000000;
+    border-color: #00000000;
+    cursor: pointer;
+    position: absolute;
+    right: 80px;
+    top: 0px;
+}
+
+
+.deletedSiteName{
+    visibility: hidden;
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+}
+
+
+
+.userListTitle{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 15px;
+    background-color: #e2e2e2;
+    color: #023c53;
+    font-family: "Kimberley", sans-serif;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute; 
+    top: 1103px;
+    right: -444px;
+}
+
+.userList{
+    font-family: "Kimberley", sans-serif;
+    color: #000000;
+    font-size: 35px;
+    width: 800px;
+    height: 485px;
+    overflow-y: scroll;
+    position: absolute; 
+    top:1165px;
+    right: -1105px;
+}
+
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+
+
+.userSitesDiv{
+    position: relative;
+    top: 11px;
+}
+
+
+
+.exitUser{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 80px;
+    top: 0px;
+}
+
+.exitUserSubmit{
+    width: 45px;
+    height: 45px;
+    background-color: #00000000;
+    border-color: #00000000;
+    cursor: pointer;
+    position: absolute;
+    right: 80px;
+    top: 0px;
+} 
+
+
+
+
+
+.pendingListTitle{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 15px;
+    background-color: #e2e2e2;
+    color: #023c53;
+    font-family: "Kimberley", sans-serif;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute; 
+    top: 1103px;
+    right: -1364px;
+}
+
+
+.pendingDiv{
+    width: 760px;
+    height: 420px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #c3c3c3;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    border: 2px;
+    position: absolute; 
+    top: 1150px;
+    right: -1977px;
+}
+
+
+
+.pendingList{
+    font-family: "Kimberley", sans-serif;
+    color: #000000;
+    font-size: 35px;
+    width: 765px;
+    height: 485px;
+    overflow-y: scroll;
+    position: absolute; 
+    top:1165px;
+    right: -1961px;
+}
+
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+
+
+.acceptInvite{
+    width: 100px;
+    height: 45px;
+    color: white;
+    background-color: #2b8d80;
+    border-color: rgb(157, 255, 231);
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    right: 180px;
+    top: 0px;
+} 
+
+
+.acceptInvite:hover {
+    background-color: #34d1bc;
+    color:white;
+ }
+
+
+.rejectInvite{
+    width: 100px;
+    height: 45px;
+    color: white;
+    background-color: #990000;
+    font-family: "Kimberley", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    border-color: rgb(255, 157, 157);
+    position: absolute;
+    right: 50px;
+    top: 0px;
+ 
+}
+
+.rejectInvite:hover {
+    background-color: #ff0000;
+    color:white;
+ }
+
+
+
+
+.video_btn{  
+    width: 185%;  
+    height: 60px;  
+    cursor: pointer;  
+    display: flex;  
+    position: absolute;
+    top: 590px;
+    left: 550px;
+    font-size: 20px;
+    font-weight: bold;
+}  
+ 
+.video_btn::before{  
+    content: 'All site';  
+    display: flex;  
+    align-items: center;  
+    width: 100%;  
+    height: 100%;  
+    background: white;  
+    border-radius: 5px;  
+    border: 2px solid #c2cbff15;  
+    padding-left: 1em;  
+    background: linear-gradient(to right, white 80%, #6DBCDB 20%); 
+    border-radius: 40px;
+}  
+ 
+input[class=video_btn]:focus{
+     border-color:dodgerBlue;
+
+}
+ 
+ 
+.video_btn::after{  
+    content: "⮟";
+    position: absolute;  
+    right: 0;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    font-family: 'Font Awesome 5 Free';  
+    font-weight: 700;  
+    width: 20%;  
+    height: 110%;  
+    color: white;  
+    transform: rotate(180deg);  
+    transition: all .4s;
+    border-radius: 40px;
+}
+ 
+.video_btn:checked::after{  
+    transform: rotate(0deg);  
+} 
+ 
+.video_Select_Site{  
+    margin-top: 0.5em;  
+    width: 185%;  
+    height: 330%; 
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);  
+    flex-direction: column;  
+    transition: all .4s; 
+    position: absolute;
+    top: 660px;
+    left: 554px;
+    
+ }  
+ 
+input:checked ~ .video_Select_Site{  
+    clip-path: none;  
+    
+}  
+ 
+.video_Select_Site a{  
+    height: 25%;  
+    display: flex;  
+    align-items: center;  
+    padding: 0.3em 0 0.3em 1em;  
+    text-decoration: none;  
+    margin: 0.3em 0;  
+    background: white;  
+    color: rgb(36, 36, 36);  
+    border-radius: 5px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.062);  
+    transition: background .7s;  
+    border-radius: 40px;
+ }  
+ 
+ .video_Select_Site a:hover{  
+    background: #6DBCDB;  
+    color: white;  
+    
+} 
+
+.video_Site{
+    width: 400px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Kimberley", sans-serif;
+    background-color: #ff000000;
+    border: #000000;
+    cursor: pointer;
+    position: absolute;
+    left: -10px;
+    text-align: center;
+    
+}
+
+.siteLabel{
+    width: 282px;
+    background-color: #ffffff;
+    font-family: "Kimberley", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 611px;
+    left: 576px;
+}
+
+
+
+.imageTable{
+    position: absolute;
+    top: 1710px;
+    right: -2240px;
+}
+ 
+.imageRow{
+    position: relative;
+    top: 400px;
+    right: -20px;
+}
+
+.heatBox{
+    width: 700px;
+    height: 550px;
+    background: #ffffff;
+    position: relative; 
+    top: 0px;
+    right: 5px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.heatImage{
+    display: block;
+    height: 400px;
+    width: 650px;
+    background-color: #cccccc;
+    position: relative;
+    top: -445px;
+    right: -20px;
+    margin-bottom: -350px;
+}
+
+
+.heatLine{
+    display: block;
+    width: 700px;
+    background-color: #cccccc;
+    height: 2px;
+    position: absolute;
+    top: 80px;
+}
+
+.heatTitle{
+    font-size: 20px;
+    font-family: "Kimberley", sans-serif;
+    position: absolute;
+    top: 30px;
+    padding-left: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+.line2 {
+    display: block;
+    width: 5px;
+    height: 390px;
+    position: relative;
+    left:1700px;
+    top: -5898px;
+}
+
+
+
+
+.outer-span .permission_container{
+    width: 180%;
+    min-width: 80px;
+    position: absolute;
+    min-height: 100px;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    
+    border-radius: 10px;
+    position:relative; 
+    left: 2100px;
+    top: -6170px;
+}
+
+#newtask{
+    position: relative;
+    padding: 30px 20px;
+}
+#newtask input{
+    width: 70%;
+    height: 30px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+    padding: 12px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    border-color:#6DBCDB;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+#newtask input:focus{
+    outline: none;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+
+#newtask button{
+    position: relative;
+    float: right;
+    width: 23%;
+    height: 56px;
+    border-radius: 5px;
+    font-family: "Kimberley", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #6DBCDB;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#tasks{
+    
+    
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.task{
+    background-color: #ffffff;
+    height: 50px;
+    width: 458px;
+    margin-bottom: 10px;
+   
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:0 0 4px 0 rgb(0, 0, 0);
+    cursor: pointer;
+    position: relative;
+    left: 24px;
+}
+.task span{
+    font-family: "Kimberley", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-weight: bold;
+}
+
+
+.task button{
+    color: white;
+    background-color: #c74b3b;
+    color: #ffffff;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.permissions_label {
+    font-size: 20px;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    height: 30px;
+    color: #000000;
+    position:relative; 
+    left: 25px;
+    top: 15px;
+}
+
+
+.outer-span .DELETE{
+    width: 240px;
+    height: 50px;
+    margin-top: 100gpx;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #990000;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    cursor:pointer;
+    position:relative; 
+    left: 2230px;
+    top: -5905px;
+}
+
+.DELETE:hover {
+    background-color: #ff0000;
+    color:white;
+ }
+
+
+ 
+ .box3 {
+    width: 2300px;
+    height: 500px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #DEDFDF;
+    position: relative;
+    left: 125px;
+    top: -5996px;
+
+}
+
+.header3 {
+    width: 2300px;
+    height: 10px;
+    margin: 1rem;
+    padding: 2rem;
+    background: #E6E6E6;
+    position: relative;
+    left: 125px;
+    top: -6576px;
+}
+
+
+
+.outer-span .sTimeFrame {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-color: white;
+    font-weight: bold;
+    padding: 20px;
+    padding-right: 55px;
+    padding-left: 55px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position:relative; 
+    left: 400px;
+    top: -6530px;
+}
+
+input[class=sTimeFrame]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+.outer-span .start_time_frame{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #363636;
+    position:relative; 
+    left: 415px;
+    top: -6548px;
+}
+
+
+.eTimeFrame {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-color: white;
+    font-weight: bold;
+    padding: 20px;
+    padding-right: 55px;
+    padding-left: 55px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position:relative; 
+    left: 400px;
+    top: -6440px;
+
+}
+
+input[class=eTimeFrame]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+
+
+.end_time_frame{
+    font-size: 27px;
+    font-family: "Kimberley", sans-serif;
+    height: 30px;
+    color: #363636;
+    position:relative; 
+    left: 415px;
+    top: -6453px;
+}
+
+.outer-span .video_line1 {
+    width: 5px;
+    height: 390px;
+    position: relative;
+    left: 1134px;
+    top: -7486px;
+}
+
+.outer-span .upload {
+    width: 225px;
+    height: 295px;
+    position: relative;
+    left: 1704px;
+    top: -6745px;
+}
+
+.ADD_VIDEO{
+    width: 240px;
+    height: 50px;
+    margin-top: 100gpx;
+    font-family: "Kimberley", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff00;
+    background-color: #2280b600;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0);
+    position:relative; 
+    left: 1992px;
+    top: -6277px;
+    border: #00000000;
+}
+
+
+
+
+.outer-span .visitors_number{
+    width: 355px;
+    height: 445px;
+    position: relative;
+    left: 119px;
+    top: -7400px;
+}
+
+.outer-span .spent{
+    width: 355px;
+    height: 445px;
+    position: relative;
+    left: 470px;
+    top: -7849px;
+}
+
+.outer-span .most_site{
+    width: 355px;
+    height: 445px;
+    position: relative;
+    left: 820px;
+    top: -8297px;
+}
+
+
+.outer-span .fewest_site{
+    width: 355px;
+    height: 445px;
+    position: relative;
+    left: 1170px;
+    top: -8746px;
+}
+
+
+
+.outer-span .M_DAY2{
+    font-size: 30px;
+    padding: 20px;
+    font-family: "Kimberley", sans-serif;
+    color: #117A09;
+    position: absolute;
+    left: 1620px;
+    top: -9570px;
+}
+
+.outer-span .M_DAY3{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+    color: #117A09;
+    position: relative;
+    left: 1635px;
+    top: -9545px;
+}
+
+
+.outer-span .F_DAY2{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+    margin: 10%;
+    height: 30px;
+    color: #D63E43;
+    position: relative;
+    left: 2104px;
+    top: -9670px;
+}
+
+.outer-span .F_DAY3{
+    font-size: 30px;
+    font-family: "Kimberley", sans-serif;
+ 
+    height: 30px;
+    color: #D63E43;
+    position: relative;
+    left: 2140px;
+    top: -9650px;
+}
+
+
+
+
+.outer-span .nbTotal{
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+    width: 100%;
+    font-family: "Kimberley", sans-serif;
+    color: #6DBCDB;
+    position:absolute; 
+    left: 145px;
+    top: -1980px;
+    text-align:center;
+ }
+
+.outer-span .avgspent{
+    display: block;    
+    font-size: 35px;
+    font-weight: bold;
+    margin: -42%;
+    font-family: "Kimberley", sans-serif;
+    color: #ffffff;
+    position:absolute; 
+    left: 740px;
+    top: -1880px;
+    text-align:center;
+ }
+
+.outer-span .mostVistors{
+    font-size: 35px;
+    font-weight: bold;
+    margin: -52%;
+    font-family: "Kimberley", sans-serif;
+    color: #ffffff;
+    position:absolute; 
+    left: 1080px;
+    top: -1815px;
+    text-align:center;
+ }
+
+ .outer-span .fewestVistors{
+    font-size: 35px;
+    font-weight: bold;
+    margin: 38%;
+    font-family: "Kimberley", sans-serif;
+    color: #ffffff;
+    position:absolute; 
+    left: 1160px;
+    top: -2085px;
+    text-align:center;
+ }
+
+.outer-span{position:relative; display:block; height:300px; width:300px;  }
+
+
+.line3 {
+    display: block;
+    padding: 5px;
+    width: 5px;
+    height: 280px;
+    position: absolute;
+    left:1995px;
+    top: -2148px;
+}
+
+.var {
+    width: 0px;
+    height: 0px;
+    border-color: #00000000;
+    color:rgba(255, 255, 255, 0);
+    background-color: #00000000;
+    
+}
+
+.btn2{
+    visibility: hidden;
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+    position: absolute;
+    left:1995px;
+    top: -1028px;
+}
+
+.profile{
+    background-color: #00000000;
+    position: absolute;
+    left: 2170px;
+    top: -4190px;
+}
+
+
+.my-validation-message::before {
+    display: none;
+  }
+  
+  .my-validation-message i {
+    margin: 0 .4em;
+    color: #f27474;
+    font-size: 1.4em;
+  }

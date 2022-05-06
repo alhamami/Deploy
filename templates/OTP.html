@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+    <div class="container">
+        <img class="logo" src="/static/img/logo.png">
+        <form class="register_form" action="{{url_for('NewUser')}}"  method="POST">
+            <input name="username"  class="btn2" value="{{ username }}">  
+            <input name="firstName"  class="btn2" value="{{ fName }}">  
+            <input name="lastName"  class="btn2" value="{{ lName }}">  
+            <input name="email"  class="btn2" value="{{ email }}" style="  visibility: hidden;
+            background-color: #00000000;
+            color: rgba(0, 0, 0, 0);
+            border-color: #00000000;
+            position: absolute;
+            top: 23px;
+            right: -747px;">  
+            <input name="password"  class="btn2" value="{{ password }}" style="  visibility: hidden;
+            background-color: #00000000;
+            color: rgba(0, 0, 0, 0);
+            border-color: #00000000;
+            position: absolute;
+            top: 23px;
+            right: -747px;">  
+            <input name="cpassword"  class="btn2" value="{{ cpassword }}" style="  visibility: hidden;
+            background-color: #00000000;
+            color: rgba(0, 0, 0, 0);
+            border-color: #00000000;
+            position: absolute;
+            top: 23px;
+            right: -747px;">  
+            <input name="code"  class="btn2" value="{{ code }}" style="  visibility: hidden;
+            background-color: #00000000;
+            color: rgba(0, 0, 0, 0);
+            border-color: #00000000;
+            position: absolute;
+            top: 23px;
+            right: -747px;">
+            
+            
+            <h1 class="form__title">Register</h1>
+
+		<label class="OTP" id="OTP">ENTER OTP</label>
+		<div class="userInput" id="userInput">
+			<input name="code1" class="code" type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+			<input name="code2" class="code" type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+			<input name="code3" class="code" type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+			<input name="code4" class="code" type="text" id="fourth" maxlength="1">
+            <input type="button" class="OTP_button" value="REGISTER" style="width: 150px;
+            height: 40px;
+            font-weight: normal;
+            font-size: 1rem;
+            color: #ffffff;
+            border: none;
+            border-radius: var(--border-radius);
+            outline: none;
+            cursor: pointer;
+            background: var(--color-primary);
+            position:relative; 
+            left:100px; 
+            top:80px;
+            border-radius: 3px;
+            box-shadow: 1 1 1 5px rgb(1, 0, 0);
+            transition: all 200ms ease-out;">
+
+        </div>
+        <br/>
+
+            
+
+        </form>
+
+
+
+        <div class="background">
+            <img src="/static/img/image-11.png">
+        </div>
+        
+
+        <form action="{{url_for('index')}}">
+            <div class="exit" >
+              <img      height="35px" width="35px" src="/static/img/home.png">
+            </div>
+
+            <input class="exitbtn" type="submit" value="">
+        </form>
+
+
+
+
+    </div>
+    </table>
+
+</body>
+<script>
+    $(".OTP_button").mouseover(function() {
+            $(this).css("background-color","#23aaf8");
+        }).mouseout(function() {
+            $(this).css("background-color","#2d9edf");
+            });
+
+
+
+
+
+        function clickEvent(first,last){
+			if(first.value.length){
+				document.getElementById(last).focus();
+			}
+		}
+
+    $(document).on('click', '.OTP_button', function() {
+
+        var ist = document.getElementById("ist")
+        var sec = document.getElementById("sec")
+        var third = document.getElementById("third")
+        var fourth = document.getElementById("fourth")
+
+        if(ist.value == "" || sec.value == "" || third.value == "" || fourth.value == ""){
+            alert("Enter the code that was sent to your email !");
+        }else if( "{{code}}" != ist.value+""+sec.value+""+third.value+""+fourth.value  ){
+            alert("The entered code is invalid !");
+        }else{
+            alert("Successful registration !");
+            $("input[class='OTP_button']").prop("type", "submit");
+        }
+
+     });
+
+
+     
+        var size = (((window.screen.width - window.screen.height ) / 100 ) / 0.1)
+        plus  =  ((1.7 / 100 ) * 1000) - 5
+        if (window.screen.width> 2000){
+            size = size - plus
+        }else{
+            size = size - plus + 3
+        }
+
+        $("html").css("zoom",size+"%")
+      
+</script>

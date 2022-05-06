@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="https://appseed.us/admin-dashboards/flask-boilerplate-dashboard-argon">
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+<body>
+
+    <table class=table1" border="4">
+
+        
+        
+        <tr>
+
+            <td>
+                <table class="content-1" border="4" >
+
+                    <tr >
+                        <td>
+                            <div class="HorContainer"></div> 
+                            <form action="{{url_for('edit_profile')}}" method="POST" id="profile">
+                                <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                                <input name="startD"  class="btn2" value="{{ startD }}">  
+                                <input name="verify" type="text" id="verify" value="{{ verify }}" class="btn2">  
+                                <input name="endD"  class="btn2" value="{{ endD }}">  
+                                <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                                <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                                <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                                <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                                <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                                <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                                <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                                <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                                <input name="username"  class="btn2" value="{{ username }}"> 
+                                <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                                <input name="user"  class="btn2" value="{{ user }}">   
+                                <input name="graph"  class="btn2" value="{{ graph }}"> 
+                                <input name="graphh"  class="btn2" value="{{ graphh }}">   
+                                <input name="adminSite"  class="btn2" value="{{ adminSite }}">     
+                                <input name="adminPermission"  class="btn2" value="{{ adminPermission }}">
+                                <input type="text" id="updateUsername" name="updateUsername"  class="btn2">
+                                <input type="text" id="updateFname" name="updateFname"  class="btn2">
+                                <input type="text" id="updateLname" name="updateLname"  class="btn2">        
+                                <input id="updateEmail" name="updateEmail"  class="btn2">  
+                                <input type name="updatePassword"   id="updatePassword" class="btn2">  
+                                <input name="updatecPassword"  id="updatecPassword" class="btn2">                   
+                                <input class="user" type="image" src="/static/img/user.png">
+
+                            </form>
+
+
+                            <table cellspadding=63px"   width="200px" height="50px">
+        
+                                <tr>
+                                    <td>
+                                        <label class="name">{{ displayName }}</label>
+                                    </td>
+                                </tr>
+                                                                
+                                <tr>
+                                    <form action="{{url_for('index')}}"  method="POST">
+                                        <a class="logout"><input class="logout" type="submit" name="logout" value="Logout"></a>
+                                    </form>
+                                </tr>
+
+
+                                <div class="box5"></div>
+                                <div class="header5"></div>
+                                <label class="VIDEO_MANAGEMENT">Video Management</label>
+
+                                
+                                <tr>
+                                    <img  class="video_line2" src="/static/img/line1.png">
+
+                                    <form action="{{url_for('edit_video')}}" method="POST" id="edit_video">
+                                        <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                                        <input name="username"  class="btn2" value="{{ username }}"> 
+                                        <input name="user"  class="btn2" value="{{ user }}">    
+                                        <input name="selectedVideoName"  class="btn2" id="selectedVideoName"> 
+                                        <input name="enteredVideoName"  class="btn2" id="enteredVideoName"> 
+                                        <input name="enteredVideoDate"  class="btn2" id="enteredVideoDate"> 
+                                        <input name="MoveSite"  class="btn2" id="MoveSite"> 
+                                        <input name="preSite"  class="btn2" id="preSite"> 
+                                        <input name="checkDeleteVideo"  class="btn2" id="checkDeleteVideo"> 
+                                        
+                                  
+
+                                        <label class="videoTitle"><pre>  Sites                 Videos Details          Name     Date    Move           Delete</pre></label>
+                                        <div class="videoSite"></div>
+
+                                        <div class="videoList" id="style-1">
+                                            <br/>
+                                            {% set count = namespace(value=0) %}
+                                            {% for x in siteName %}
+                                            
+                                                <div class="videoDiv" style="padding-bottom: 15px;" id="videoDiv">{{ x }}
+                                                    <input class="enterVideoName" id="enterVideoName" name="enterVideoName" type="text" placeholder="Enter a new video name">
+                                                    <input class="enterDate" name="enterDate" type="date" id = "enterDate" name = "enterDate">
+                                                    <img class="back" id="back" src="/static/img/back.png">
+                                                    <select class="changeVideoSite" name="changeVideoSite">
+                                                        {% for z in userSites %}
+                                                        <option>{{ z }}</option>
+                                                        {% endfor %}
+
+                                                    </select>
+                                                   
+
+
+                                                    <select class="videos">
+                                                        {% for y in videoAndDate[count.value]  %}
+                                                        <option>{{ y }}</option>
+                                                        {% endfor %}
+
+                                                        <input class="updateVideoName" type="button" value="✏️" id="updateVideoName" title="Update video name">
+                                                        <input class="changeVideoSiteBtn" type="button" value="📍" title="Update video site">
+                                                        <input class="updateVideoDate" type="button" value="📅" id="updateVideoDate" title="Update video date"> 
+    
+                                                    </select>
+
+                                                    
+                                                    
+                                                    
+                                                    
+                                                   
+                                                    <input name="currentSite"  class="deletedSiteName" id="currentSite" value="{{ x }}"> 
+                                                    <input class="deleteVideoSite" id="deleteVideoSite" type="submit" value="❌"  id="deleteSite" title="Delete video">
+                                                   
+                                                    
+
+                                                </div>
+                                                <hr/>
+                                                {% set count.value = count.value + 1 %}
+                                            {% endfor %}
+                                        </div>
+                                    
+
+                                </form>
+
+
+
+                                </tr>
+
+
+
+
+                                <tr>
+                               
+
+                                    <label class="selectSite2">Select a site: </label>
+
+                                    <label class="videoFile">Video name: </label>
+                                    <label class="videoName" id="videoName"></label>
+
+                                    <form id="upload_file"  action = "{{url_for('upload_file')}}" method = "POST" enctype=multipart/form-data>
+                                        
+                                        <label class="start_time_frame" for="sdatetime">Date:</label>
+                                        <input class="sTimeFrame" type="date" id="sdatetime" name="sdatetime" value="{{ addDate }}">
+                                        <input name="username"  class="btn2" value="{{ username }}">
+                                        <input name="currentSite"  class="btn2" value="{{ currentSite }}">
+                                        <input name="selectedSite"  class="btn2" id="selectedSite">              
+                                        <img  class="video_line" src="/static/img/line1.png">
+                                        <img  class="upload" name="upload" src="/static/img/upload.png">
+                                        <input type="file" name="file" class="choose_file" value="" id="choose_file" accept="video/mp4, image/webm">
+                                        <input type="button" class="UPLOAD_VIDEO" value="Add" onclick="clicked(event)" id="UPLOAD_VIDEO">
+                                        <input name="user"  class="btn2" value="{{ user }}">   
+
+                                        
+                                        <input type="checkbox" name="select"  class="video_btn" value="{{ username }}" id="video_btn">
+                                        <label class="siteLabel" name="siteLabel" id="siteLabel">Select Site</label>  
+                                        <div class="video_Select_Site">  
+
+                     
+                                       {% for x in userSites %}
+                                 
+                                           <a><input type="button" name="click" onclick="selectSite(this.value)" value="{{ x }}" class="video_Site" id="video_Site"></a>
+                                           <div class="space"></div>
+                                       
+                                       {% endfor %}
+
+                                        </div> 
+
+
+
+                                    </form> 
+                                
+                                </tr>
+
+                                
+                                
+                            </table>                                               
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+
+            <td>
+                <div class="VerContainer"></div> 
+                <form action="{{url_for('dashboard')}}" method="POST">
+                    <input type="image" class="logo" src="/static/img/logo.png">
+                    <img  class="dot" src="/static/img/dot.png">
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                    <input name="username"  class="btn2" value="{{ username }}">   
+                    <input name="user"  class="btn2" value="{{ user }}">   
+                    <img class="dash" src="/static/img/dash-1.png">
+                    <input class="dashboard" type="submit">
+                </form>
+
+                
+          
+                <form action="{{url_for('video_management')}}" method="POST">
+                    <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                    <input name="startD"  class="btn2" value="{{ startD }}">  
+                    <input name="endD"  class="btn2" value="{{ endD }}">  
+                    <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                    <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                    <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                    <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                    <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                    <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                    <input name="username"  class="btn2" value="{{ username }}"> 
+                    <input name="user"  class="btn2" value="{{ user }}">   
+                    <input name="graph"  class="btn2" value="{{ graph }}"> 
+                    <input name="graphh"  class="btn2" value="{{ graphh }}">              
+                    <img class="video" src="/static/img/video.png">
+
+                    
+                    <input class="videoInput" type="submit">
+                </form>
+
+                
+                <form action="{{url_for('site_management')}}" method="POST">
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                    <input name="username"  class="btn2" value="{{ username }}">    
+                    <input name="user"  class="btn2" value="{{ user }}">              
+                    <img class="site" src="/static/img/sManage.png">
+
+                    
+                    <input class="siteInput" type="submit">
+                </form>
+
+
+
+            </td>
+
+
+        </tr>
+
+
+    </table>
+
+
+        
+
+    
+
+
+    
+ 
+</body>
+
+
+<script>
+{% if checkVideo == True %}
+Swal.fire('Video uploaded!', '', 'success')
+{% elif checkVideo == False %}
+Swal.fire('The video already exists!', '', 'error')
+{% endif %}
+
+
+let stopUpload = 0;
+function clicked(e)
+{
+    if($.trim($('[class$=siteLabel]').text()) == "Select Site" && ($('[class$=videoName]').text() == undefined
+        || $('[class$=videoName]').text() == "")){
+            Swal.fire({
+                                title: '<strong>Notice</strong>',
+                                icon: 'info',
+                                html:
+                                    'Please choose video and site !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+            e.preventDefault();
+            return;
+        }else if($('[class$=videoName]').text() == undefined || $('[class$=videoName]').text() == ""){
+            Swal.fire({
+                                title: '<strong>Notice</strong>',
+                                icon: 'info',
+                                html:
+                                    'Please choose a video !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+            e.preventDefault();
+            return;
+        }else if($.trim($('[class$=siteLabel]').text()) == "Select Site"){
+            Swal.fire({
+                                title: '<strong>Notice</strong>',
+                                icon: 'info',
+                                html:
+                                    'Please choose a site !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+            e.preventDefault();
+            return;
+        }
+
+    if(stopUpload == 0){
+        $("input[class='UPLOAD_VIDEO']").prop("type", "button");
+        Swal.fire({
+        title: 'Upload video?',
+        showDenyButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: 'No',
+        customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+        }
+        }).then((result) => {
+        if (result.isConfirmed) {
+            $('#UPLOAD_VIDEO').prop('value', "Uploading..");
+            setTimeout(function(){
+            $('form#upload_file').submit();
+            }, 2000);
+            stopUpload = 1;
+
+            let timerInterval
+
+            Swal.fire({
+            title: 'Uploading..!',
+            html:
+                '',
+         
+            didOpen: () => {
+                
+                
+                Swal.showLoading()
+
+                
+            }
+             
+            })
+           
+        } else if (result.isDenied) {
+            e.preventDefault();
+            Swal.fire('Video was not uploaded', '', 'info')
+        }
+        })
+    }else{
+        e.preventDefault();
+    }
+}
+    // give max date range for the uploaded video date
+    sdatetime.max = new Date().toISOString().split("T")[0];
+    // same for all dates in the list
+    var elements = document.getElementsByClassName('enterDate');
+    for (let element of elements) { element.max = new Date().toISOString().split("T")[0];}
+    
+
+
+
+    $(document).on('click', '.user', function(e) {
+
+$("input[name='verify']").val("otp");
+e.preventDefault();
+setTimeout(function(){
+    $('form#profile').submit();
+    }, 1000);
+});
+
+$(document).ready(function(){    
+         
+         var verify = "{{verify}}";
+         var code = "{{code}}";
+
+
+ if (verify == "otp"){
+  
+         Swal.fire({
+         title: 'Account Management',
+         html: `  
+         
+         <hr style="margin-bottom: 6.5%;">
+                 
+         <div class="container">
+             <div class="row justify-content-md-center">
+                 <div class="col-md-4 text-center">
+                     <div class="row">
+                     <div class="col-sm-12 mt-5 bgWhite" style="background:white; box-shadow:0px 3px 6px 0px #cacaca;">
+                         <div class="title" style="font-weight:600; margin-top:20px; font-size:24px">
+                         Verify OTP
+                         </div>
+                         <br>
+                         
+                         <form id="otp" action="" class="mt-5" >
+                         <input name="email"  class="btn2" value="{{ email }}" hidden>  
+                         <input name="otp1" id="otp1" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1 style="font-size:30px;background-color:#e9e3e3; display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         <input name="otp2" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         <input name="otp3" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         <input name="otp4" class="otp" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         </form>
+
+                         <br>
+
+                     </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+                     
+                 `,
+
+         confirmButtonText: 'Confirm',
+         showCloseButton: true,
+         showCancelButton: true,
+         showCloseButton: true,
+              preConfirm: () => {
+             var number = $("input[name='otp1']").val()+$("input[name='otp2']").val()+$("input[name='otp3']").val()+$("input[name='otp4']").val()
+         
+             if(code != number){
+                 Swal.showValidationMessage(`Error OTP`)
+                 
+             }else{
+                 $("input[name='verify']").val("profile")
+                 setTimeout(function(){
+                 $('form#profile').submit();
+                 }, 2000);
+             }
+
+         }
+         })
+         var elts = document.getElementsByClassName('otp')
+         Array.from(elts).forEach(function(elt){
+         elt.addEventListener("keyup", function(event) {
+
+             if (event.keyCode === 13 || elt.value.length == 1) {
+ 
+             elt.nextElementSibling.focus()
+             }
+         });
+         })
+
+ 
+       
+}else if(verify == "profile"){
+     Swal.fire({
+     title: 'Account Management',
+     html: `  
+     
+     
+
+     <hr style="margin-bottom: 6.5%;">
+
+
+             
+     <table align="center">
+     <tr >
+             <td style="position: relative; left: 10%; padding-bottom: 7%; ">
+                 <input class="username" id="username" type="image" src="/static/img/user.png" width="80px">
+
+             </td>
+     </tr>
+     <tr style="background: #c2cbff15;">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+              <b style="font-size: 20px; color:balck;">Name:  {{displayName}}  </b> 
+         </td>
+
+         <td style="text-align: left; vertical-align: middle;">
+             <input class="disNmae" id="disNmae" type="button" value="Update" onclick="updateName()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+
+         </td>
+
+     </tr>
+
+     <tr style="background: #c5cdff1e;">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+           <b style="font-size: 20px; color:balck">Username:  {{ username }}  </b>  
+         </td>
+
+         <td style="text-align: left; vertical-align: middle;">
+             <input class="username" id="username" type="button" value="Update" onclick="updateUsername()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+
+         </td>
+
+     </tr>
+
+     <tr style="background: #c2cbff15;">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+              <b style="font-size: 20px;">Email:  {{ email }}  </b> 
+         </td>
+
+         <td style="text-align: center; vertical-align: middle;">
+             <input id="Email" type="submit" value="Update" onclick="updateEmail()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+         </td>
+     </tr>
+
+     <tr style="background: #c5cdff1e;"">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+             <b style="font-size: 20px;">Password: *******</b> 
+         </td>
+
+         <td style="text-align: center; vertical-align: middle;">
+             <input type="submit" value="Update" onclick="updatePassword()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+         </td>
+     </tr>
+
+     </table>
+                 
+             `,
+
+     confirmButtonText: 'Cancel',
+     showCloseButton: true,
+     
+     }).then((result) => {
+
+         $("input[name='verify']").val("done");
+
+         setTimeout(function(){
+             $('form#profile').submit();
+             }, 2000);
+
+
+     })
+
+ }
+
+});
+
+
+
+function updateName() {
+      
+      Swal.fire({
+      title: 'Update name',
+      html: `<input type="text" class-"UpFname" name="UpFname" id="UpFname" class="swal2-input" placeholder="Enter a new first name">
+      <input type="text" class-"UpLname" name="UpLname" id="UpLname" class="swal2-input" placeholder="Enter a new last name">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+    
+
+
+          const UpFname = Swal.getPopup().querySelector('#UpFname').value
+          const UpLname = Swal.getPopup().querySelector('#UpLname').value
+          var format = /[ `1234567890!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                               
+   
+          if (!UpFname) {
+              Swal.showValidationMessage(`The first name must not be empty`)
+          }else if( (UpFname.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`The first name must not contain space`)
+          }else if(format.test(UpFname)){
+              Swal.showValidationMessage(`The first name must not contain special characters or digits`)
+          }else if (!UpLname) {
+              Swal.showValidationMessage(`The last name must not be empty`)
+          }else if( (UpLname.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`The last name must not contain space`)
+          }else if(format.test(UpLname)){
+              Swal.showValidationMessage(`The last name must not contain special characters or digits`)
+          }else{
+              $("input[id='updateFname']").val($("input[id='UpFname']").val());
+              $("input[id='updateLname']").val($("input[id='UpLname']").val());
+              return { username: UpFname, username: UpLname}
+          }
+   
+      }
+      }).then((result) => {
+
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+     
+      })
+             
+          
+   };
+
+
+function updateUsername() {
+      
+      Swal.fire({
+      title: 'Update username',
+      html: `<input type="text" class-"UpUsername" name="UpUsername" id="UpUsername" class="swal2-input" placeholder="Enter a new username">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+    
+
+
+          const UpUsername = Swal.getPopup().querySelector('#UpUsername').value
+          var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                               
+   
+          if (!UpUsername) {
+              alert(usernameIseExists)
+              Swal.showValidationMessage(`Username must not be empty`)
+          }else if( (UpUsername.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`Username must not contain space`)
+          }else if(format.test(UpUsername)){
+              Swal.showValidationMessage(`Username must not contain special characters`)
+          }else{
+              $("input[id='updateUsername']").val($("input[id='UpUsername']").val());
+              return { username: UpUsername }
+          }
+   
+      }
+      }).then((result) => {
+
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+     
+      })
+             
+          
+   };
+   
+   
+    function updateEmail() {
+      
+      
+      Swal.fire({
+      title: 'Update email',
+      html: `<input type="email" id="Upemail" class="swal2-input" placeholder="Enter a new email">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+          const email = Swal.getPopup().querySelector('#Upemail').value
+   
+          const checkEmail =  String(email)
+              .toLowerCase()
+              .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              );
+   
+                                          
+   
+          if (!checkEmail) {
+              Swal.showValidationMessage(`Please enter a valid eamil`)
+          }else{
+              $("input[id='updateEmail']").val($("input[id='Upemail']").val())
+      
+              return { email: email }
+          }
+         
+      }
+      }).then((result) => {
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+      })
+                  
+          
+   };
+   
+   
+    function updatePassword() {
+      
+      
+      Swal.fire({
+      title: 'Update password',
+      html: `<input type="password" id="password" class="swal2-input" placeholder="Enter a new password">
+      <input type="password" id="cpassword" class="swal2-input" placeholder="Confirm new password">
+      <span id="StrengthDisp" class="badge displayBadge" style="margin-top: 5%;display: none; text-align :center;">Weak</span>`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+          const password = Swal.getPopup().querySelector('#password').value
+          const cpassword = Swal.getPopup().querySelector('#cpassword').value
+          
+          let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')            
+   
+   
+   
+          
+          if(password =="" || cpassword=="") { 
+              Swal.showValidationMessage(`Password must not be empty`)
+          }else if ((password.indexOf(' ') >= 0) || (cpassword.indexOf(' ') >= 0)) {
+              Swal.showValidationMessage(`Password must not contain space`)
+          }else if(password != cpassword ){
+              Swal.showValidationMessage(`Password does not match`)
+          }else if(password.length<8){
+              Swal.showValidationMessage(`Password must contain at least 8 letter's`)
+          }else if(!strongPassword.test(password)) {
+              Swal.showValidationMessage(`Password must contain at least one capital letter, symbol and number`)
+          }else{
+              var uPassword = document.getElementById("password")
+              //var uCpassword = document.getElementById("cpassword")
+   
+              $("input[id='updatePassword']").val($("input[id='password']").val())
+              
+              return { password: password }
+          }
+         
+      }
+      }).then((result) => {
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+      })
+                  
+          
+   };
+
+
+
+$(document).ready(function(){
+var checkName = "{{updatedName}}";
+var checkUsername = "{{updatedUsername}}";
+var checkEmail = "{{updatedEmail}}";
+var checkPassword = "{{updatedPassword}}";
+
+
+if(checkName == "updated"){
+{% set checkName = "False" %}
+Swal.fire(
+        'The name updated successfully',
+        "",
+        'success'
+    )
+}else if(checkName == "no update"){
+{% set checkName = "False" %}
+Swal.fire(
+        'The name was not updated successfully',
+        "",
+        'error'
+    )
+
+}else if(checkUsername == "updated"){
+{% set updatedUsername = "False" %}
+Swal.fire(
+        'The username updated successfully',
+        "",
+        'success'
+    )
+}else if(checkUsername == "no update"){
+{% set updatedUsername = "False" %}
+Swal.fire(
+        'The username is already exists',
+        "",
+        'error'
+    )
+
+}else if(checkEmail == "updated"){
+{% set updatedEmail = "False" %}
+Swal.fire(
+'The email updated successfully',
+"",
+'success'
+)
+}else if(checkEmail == "no update"){
+{% set updatedEmail = "False" %}
+    Swal.fire({
+    icon: 'error',
+    title: 'The email is already exists',
+    text: '',
+    })
+}else if(checkPassword == "updated"){
+{% set updatedPassword = "False" %}
+Swal.fire(
+'The password updated successfully',
+"",
+'success'
+)
+}else if(checkPassword == "no update"){
+{% set updatedPassword = "False" %}
+Swal.fire({
+    icon: 'error',
+    title: 'The password update failed',
+    text: '',
+    })
+}
+
+}); 
+
+
+
+
+    $(document).click(function() {
+        var list = $("#video_btn");
+        if (!list.is(event.target)) {
+            $('#video_btn').prop('checked', false);
+        }
+    });
+
+    
+    function selectSite(x) {
+        $('[id$=siteLabel]').text(x);
+        $("#video_btn").prop('checked', false);
+        var selectedSite = document.getElementById("selectedSite")
+        selectedSite.value = x
+        var video_btn = document.getElementById("video_btn")
+        video_btn.value = selectedSite.value
+    }
+
+
+
+
+    $(document).on('change', '.choose_file', function() {
+        var x = document.getElementById("choose_file")
+        var path = x.value
+        path = path.replace(/.*[\/\\]/, '');
+
+
+        if ( isVideo(path) ){
+            $('[id$=videoName]').text(path);
+            $("#videoName").css("color", "#1a9c87");
+
+        }else{
+            Swal.fire({
+                                title: '<strong>Not a video file</strong>',
+                                icon: 'info',
+                                html:
+                                    'Please select a video file !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+            $('[class$=videoName]').text(path+" is not a video file");
+            $("#videoName").css("color", "#ad2727");
+        }
+
+     });
+     
+
+
+     function getExtension(filename) {
+        var parts = filename.split('.');
+        return parts[parts.length - 1];
+    }
+
+
+
+     function isVideo(filename) {
+        var ext = getExtension(filename);
+        switch (ext.toLowerCase()) {
+            case 'm4v':
+            case 'avi':
+            case 'mpg':
+            case 'mp4':
+            case 'webm':
+            case 'mpg':
+            case 'mp2': 
+            case 'mpeg': 
+            case 'mpe':
+            case 'mpv':
+            case 'ogg':
+            case 'm4p':
+            case 'avi':
+            case 'wmv':
+            case 'qt':  
+            case 'flv':
+            case 'swf':
+            case 'MOV':
+            return true;
+        }
+        return false;
+        }
+
+
+    $("input[class='updateVideoName']").prop("type", "button");
+
+    let alphabet = /[a-zA-Z]/, //letters a to z and A to Z
+		numbers = /[0-9]/; //0 to 9
+
+    $(document).on('click', '.updateVideoName', function() {
+        // If there is no characters nor numbers.
+        nameValue = $(this).closest("div.videoDiv").find("input[class='enterVideoName']").val();
+        if (!(nameValue.match(alphabet) || nameValue.match(numbers)) && nameValue == "" && $(this).closest("div.videoDiv").find("input[class='updateVideoName']").val() == "✔️"){
+
+            Swal.fire({
+                                title: '<strong>Update Video Name</strong>',
+                                icon: 'info',
+                                html:
+                                    'You must enter the name first !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+
+        // If there is no characters nor numbers.
+        }else if(/^\s/.test(nameValue)){
+            Swal.fire({
+                                title: '<strong>Update Video Name</strong>',
+                                icon: 'info',
+                                html:
+                                    'The video name must not start with space!',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+
+
+        }else if(!(nameValue.match(alphabet) || nameValue.match(numbers)) && $(this).closest("div.videoDiv").find("input[class='updateVideoName']").val() == "✔️"){
+            Swal.fire({
+                                title: '<strong>Update Video Name</strong>',
+                                icon: 'info',
+                                html:
+                                    'The video name must contain at least one Character/Number !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+
+        }
+
+
+
+        if ($(this).closest("div.videoDiv").find("input[class='updateVideoName']").val() == "✏️" ){
+            $(this).closest("div.videoDiv").find("input[class='updateVideoName']").val("✔️");
+            $(this).closest("div.videoDiv").find("input[class='updateVideoDate']").val("📅");
+            $(this).closest("div.videoDiv").find("input[class='changeVideoSiteBtn']").val("📍");
+            $(this).closest("div.videoDiv").find("input[class='enterVideoName']").show();
+            $(this).closest("div.videoDiv").find("select[class='videos']").hide();
+            $(this).closest("div.videoDiv").find("input[class='enterDate']").hide();
+            $(this).closest("div.videoDiv").find("select[class='changeVideoSite']").hide();
+            $(this).closest("div.videoDiv").find("img[class='back']").css("visibility","visible");
+        }
+
+        if ( $(this).closest("div.videoDiv").find("input[class='updateVideoName']").val() == "✔️" && (nameValue.match(alphabet) || nameValue.match(numbers)) && $(this).closest("div.videoDiv").find("input[class='enterVideoName']").val() != "" ){
+     
+            if(/^\s/.test($("input[class='enterVideoName']").val())){
+                var input = document.getElementById ("enterVideoName");
+                input.value = "" ;
+            }else{
+            
+                var selectedVideoName = document.getElementById("selectedVideoName");
+            selectedVideoName.value = $(this).closest("div.videoDiv").find("select[class='videos']").val();
+
+            var enteredVideoName = document.getElementById("enteredVideoName");
+            enteredVideoName.value = $(this).closest("div.videoDiv").find("input[class='enterVideoName']").val();
+
+                
+        
+             
+            Swal.fire(
+                'Updated successfully',
+                'Video name is: '+enteredVideoName.value,
+                'success'
+            )
+
+            setTimeout(function(){
+                $('form#edit_video').submit();
+            }, 3000);
+
+                
+            }
+           
+        }
+
+            
+
+    });
+
+
+    $(document).on('click', '.updateVideoDate', function() {
+
+        if ($(this).closest("div.videoDiv").find("input[class='enterDate']").val() == "" && $(this).closest("div.videoDiv").find("input[class='updateVideoDate']").val() == "✔️"){
+          
+            Swal.fire({
+                                title: '<strong>Update Video Date</strong>',
+                                icon: 'info',
+                                html:
+                                    'You need to select a new date first !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+        }
+
+        if ($(this).closest("div.videoDiv").find("input[class='updateVideoDate']").val() == "📅"){
+            $(this).closest("div.videoDiv").find("select[class='videos']").hide();
+            $(this).closest("div.videoDiv").find("select[class='changeVideoSite']").hide();
+            $(this).closest("div.videoDiv").find("input[class='enterVideoName']").hide();
+            $(this).closest("div.videoDiv").find("input[class='enterDate']").show();
+            $(this).closest("div.videoDiv").find("input[class='updateVideoDate']").val("✔️")
+            $(this).closest("div.videoDiv").find("input[class='updateVideoName']").val("✏️");
+            $(this).closest("div.videoDiv").find("input[class='changeVideoSiteBtn']").val("📍");
+            $(this).closest("div.videoDiv").find("img[class='back']").css("visibility","visible");
+        }
+
+
+        
+        if ( $(this).closest("div.videoDiv").find("input[class='updateVideoDate']").val() == "✔️" && $(this).closest("div.videoDiv").find("input[class='enterDate']").val() != "" ){
+            
+          
+            var selectedVideoName = document.getElementById("selectedVideoName")
+            selectedVideoName.value = $(this).closest("div.videoDiv").find("select[class='videos']").val()
+
+            var enteredVideoDate = document.getElementById("enteredVideoDate")
+            enteredVideoDate.value = $(this).closest("div.videoDiv").find("input[class='enterDate']").val()
+
+            Swal.fire(
+                'Updated successfully',
+                'Video date is: '+enteredVideoDate.value,
+                'success'
+            )
+
+            setTimeout(function(){
+                $('form#edit_video').submit();
+            }, 3000);
+
+                
+            
+        }
+
+
+    });
+
+
+
+    $(document).on('click', '.changeVideoSiteBtn', function() {
+
+
+        if ($(this).closest("div.videoDiv").find("input[class='changeVideoSiteBtn']").val() == "📍"){
+            $(this).closest("div.videoDiv").find("select[class='videos']").hide();
+            $(this).closest("div.videoDiv").find("input[class='enterDate']").hide();
+            $(this).closest("div.videoDiv").find("input[class='enterVideoName']").hide();
+            $(this).closest("div.videoDiv").find("select[class='changeVideoSite']").show();
+            $(this).closest("div.videoDiv").find("input[class='changeVideoSiteBtn']").val("✔️")
+            $(this).closest("div.videoDiv").find("input[class='updateVideoDate']").val("📅")
+            $(this).closest("div.videoDiv").find("input[class='updateVideoName']").val("✏️");
+            $(this).closest("div.videoDiv").find("img[class='back']").css("visibility","visible");
+        
+        }else if ( $(this).closest("div.videoDiv").find("input[class='changeVideoSiteBtn']").val() == "✔️"){
+
+            var selectedVideoName = document.getElementById("selectedVideoName")
+            selectedVideoName.value = $(this).closest("div.videoDiv").find("select[class='videos']").val()
+
+            var MoveSite = document.getElementById("MoveSite")
+            changeVideoSite = $(this).closest("div.videoDiv").find("select[class='changeVideoSite']").val()
+            MoveSite.value = changeVideoSite
+
+            var preSite = document.getElementById("preSite")
+            changeVideoSite = $(this).closest("div.videoDiv").find("input[class='deletedSiteName']").val()
+            preSite.value = changeVideoSite
+
+            Swal.fire(
+                'Moved successfully',
+                'Video site is: '+  MoveSite.value,
+                'success'
+            )
+
+            setTimeout(function(){
+                $('form#edit_video').submit();
+            }, 3000);
+
+                
+            
+        }
+
+
+    });
+
+
+
+
+
+    $(document).on('click', '.back', function() {
+
+
+        $(this).closest("div.videoDiv").find("input[class='updateVideoName']").val("✏️");
+        $(this).closest("div.videoDiv").find("input[class='updateVideoDate']").val("📅");
+    
+        $(this).closest("div.videoDiv").find("input[class='changeVideoSiteBtn']").val("📍");
+        $(this).closest("div.videoDiv").find("img[class='back']").css("visibility","hidden");
+        $(this).closest("div.videoDiv").find("input[class='enterVideoName']").hide();
+        $(this).closest("div.videoDiv").find("input[class='enterDate']").hide();
+        $(this).closest("div.videoDiv").find("input[class='changeVideoSite']").hide();
+        $(this).closest("div.videoDiv").find("select[class='videos']").show();
+
+    });
+
+
+    $(document).on('click', '.deleteVideoSite', function(e) {
+            var checkDelete = 0;
+            e.preventDefault();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this video!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                    'Deleted!',
+                    'Your video has been deleted.',
+                    'success'
+                    )
+                    var checkDeleteVideo = document.getElementById("checkDeleteVideo")
+                    checkDeleteVideo.value = "true"
+                    var selectedVideoName = document.getElementById("selectedVideoName")
+                    selectedVideoName.value = $(this).closest("div.videoDiv").find("select[class='videos']").val()
+                    
+                    checkDelete=1;
+               
+                }else{
+                    checkDelete=0;
+                }
+                if(checkDelete==1){
+                    setTimeout(function(){
+                        $('form#edit_video').submit();
+                    }, 3000);
+                }
+
+            })
+        
+    });
+
+
+    
+
+
+
+    function check() {
+        var checkVideo = isVideo($('[class$=videoName]').text());
+        if($.trim($('[class$=siteLabel]').text()) != "Select Site" && $('[class$=videoName]').text() != undefined
+        && $('[class$=videoName]').text() != "" && $('[class$=sTimeFrame]').val() != ""){
+
+            if (checkVideo == false){
+         
+
+                Swal.fire({
+                                title: '<strong>Select Video</strong>',
+                                icon: 'info',
+                                html:
+                                    'Please select video file !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+
+                $("#UPLOAD_VIDEO").css("color", "#555");
+                $("#UPLOAD_VIDEO").css("background-color", "#999");
+                $("#UPLOAD_VIDEO").css("box-shadow", "0 0 40px #00000033");
+                $("#UPLOAD_VIDEO").css("cursor", "not-allowed");
+
+                $(".UPLOAD_VIDEO").mouseover(function() {
+                        $(this).css("background-color","#999");
+                    }).mouseout(function() {
+                        $(this).css("background-color","#999");
+                });
+                $('#UPLOAD_VIDEO').prop('disabled', true);
+
+            }else{
+                $("#UPLOAD_VIDEO").css("border", "1px solid #2c2c2c33");
+                $("#UPLOAD_VIDEO").css("solid","#999999");
+                $("#UPLOAD_VIDEO").css("background-color","#2280b6");
+                $("#UPLOAD_VIDEO").css("color","#ffffff");
+                $("#UPLOAD_VIDEO").css("box-shadow","0 0 40px #00000033");
+                $("#UPLOAD_VIDEO").css("box-shadow","0 0 40px #00000033");
+                $("#UPLOAD_VIDEO").css("cursor","pointer");
+                $('#UPLOAD_VIDEO').prop('disabled', false);
+                $("input[class='UPLOAD_VIDEO']").prop("type", "submit");
+                
+                $(".UPLOAD_VIDEO").mouseover(function() {
+                        $(this).css("background-color","#5DB3E6");
+                    }).mouseout(function() {
+                        $(this).css("background-color","#2280b6");
+                });
+    
+
+            }
+
+
+        }
+    }
+
+
+    $("input[class='sTimeFrame']").change(function(){
+        $(check);
+    });   
+
+
+
+    $(document).on('click', '.video_Site', function() {
+        $(check);
+    });   
+
+
+    $("input[class='choose_file']").change(function(){
+        $(check);
+    });   
+    
+
+        $(document).ready(function(){
+
+            var size = (((window.screen.width - window.screen.height ) / 100 ) / 0.1)
+            plus  =  ((1.7 / 100 ) * 1000) - 5
+            if (window.screen.width> 2000){
+                size = size - plus
+            }else{
+                size = size - plus + 3
+            }
+
+            $("html").css("zoom",size+"%");
+
+        });
+
+
+
+
+
+</script>

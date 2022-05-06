@@ -1,0 +1,415 @@
+.contentTable {
+    width: 100%;
+    height: 100%;
+    background: #DEDFDF;
+
+}
+
+.header1 {
+    width: 100%;
+    height: 18%;
+    background: #E6E6E6;
+}
+
+.TIME_PERIOD{
+    font-size: 25px;
+    color: #000000;
+    position: relative;
+    left: 47%;
+}
+
+
+.dateLineRow{
+    width: 100%;
+    height: 10%;
+}
+
+.dateLine{
+     width: 100%;
+}
+.dateBack {
+    display: block;
+    background-color: #f6f6f6;  
+    border-radius: 0px;  
+    width: 11%;
+    height: 18%;
+    border-radius: 0px 3px 25px 0px;  
+    position: relative;
+    top: 6%;
+    font-size: 21px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.currentDate{
+    font-size: 90%;
+    font-weight: bold;
+    color: #3099ca;
+}
+
+.selectSite1{
+    width: 100%;
+    height: 50%;
+    font-size: 21px;
+    color: #363636;
+}
+
+.siteAndFilterTable{
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.siteAndFilterTable-Col1{
+    width: 50%;
+    height: 100%;
+}
+
+
+.siteAndFilterTable-Col2{
+    width: 50%;
+    height: 100%;
+}
+
+
+.selectSite1Label{
+    font-size: 22px;
+    position: relative;
+    left: 34%;
+}
+
+.siteLabel2{ 
+    background-color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    left: 18%;
+    bottom: 45px;
+}
+
+
+
+
+
+.select_site{  
+    width: 16.8%;  
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);  
+    flex-direction: column;  
+    transition: all .4s; 
+    display: block;
+    position:absolute;
+    left: 16.6%;
+    margin-top: -15px;
+ }  
+ 
+input:checked ~ .select_site{  
+    clip-path: none;  
+    
+}  
+ 
+.select_site a{  
+    height: 25%;  
+    display: flex;  
+    align-items: center;  
+    padding: 0.3em 0 0.3em 1em;  
+    text-decoration: none;  
+    margin: 0.3em 0;  
+    background: white;  
+    color: rgb(36, 36, 36);  
+    border-radius: 5px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.062);  
+    transition: background .4s;  
+    border-radius: 40px;
+ }  
+ 
+ .select_site a:hover{  
+    background: #6DBCDB;  
+    color: white;  
+    
+} 
+
+.sSite{
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #ff000000;
+    border: #000000;
+    cursor: pointer; 
+    direction:rtl;
+    position: relative;
+    right: 3%;
+
+}
+
+ 
+.line1 {
+    display: block;
+    width: 5px;
+    height: 190px;
+    position: relative;
+    bottom: 25px;
+
+}
+
+.fDate{
+    font-size: 22px;
+    padding-left: 51%;
+}
+
+.tDate{
+    font-size: 22px;
+    padding-left: 8%;
+}
+
+
+
+.date1 {
+    width: 97.2%;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-color:rgb(139, 192, 245);
+    font-weight: bold;
+    position: relative;
+    top: 5.5%;
+    left: 1.4%;
+}
+  
+input[class="date1"]:focus{
+    border-color:rgb(139, 192, 245);
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+
+.dateBox1{
+    width: 50%;
+    height: 60px;
+    background: #ffffff;
+    border-radius:31px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    left: 48%;
+}
+
+
+
+.date2 {
+    width: 97.2%;
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border-color:rgb(139, 192, 245);
+    font-weight: bold;
+    position: relative;
+    top: 5.5%;
+    left: 1.4%;
+}
+
+input[class="date2"]:focus{
+    border-color:rgb(139, 192, 245);
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+
+.dateBox2{
+    width: 50%;
+    height: 60px;
+    background: #ffffff;
+    border-radius:31px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    left: 6%;
+}
+
+
+.FILTER{
+    width: 15%;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;    
+    border-radius:31px;
+    color: #ffffff;
+    background-color: #6C8298;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    cursor:pointer;
+    position: relative;
+    left: 43.5%;
+
+}
+
+.FILTER:hover {
+    background-color: #5daeff;
+    color:white;
+ }
+
+
+
+.nbTotal{
+     display: block;
+     font-size: 27px;
+     font-weight: bold;
+     width: 100%;
+     color: #6DBCDB;
+     text-align:center;
+     position: relative;
+     bottom: 120px;
+     margin-bottom: -16%;
+
+}
+
+.avgspent{
+    display: block;    
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align:center;
+    position: relative;
+    bottom: 125px;
+    margin-bottom: -16%;
+}
+
+
+.mostVistors{
+    width: 100%;
+    display: block;
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align:center;
+    position: relative;
+    bottom: 125px;
+    margin-bottom: -6%;
+ }
+
+
+
+.fewestVistors{
+    width: 100%;
+    display: block;    
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align:center;
+    position: relative;
+    bottom: 125px;
+    margin-bottom: -6%;
+}
+
+
+.box4 {
+    background: #DEDFDF;
+}
+
+
+.header4 {
+    background: #E6E6E6;
+}
+
+
+.FIVE_DAYS{
+    font-size: 27px;
+    color: #000000;
+}
+
+.MOST_DAYS{
+    font-size: 25px;
+    font-weight: bold;
+    height: 30px;
+    color: #000000;
+}
+
+.FEWEST_DAYS{
+    font-size: 25px;
+    font-weight: bold;
+    height: 30px;
+    color: #000000;
+}
+
+
+.M_DAY1{
+    font-size: 30px; 
+    color: #117A09;
+}
+
+.F_DAY1{
+    font-size: 30px;
+    color: #D63E43;
+}
+
+.fiveDaysLine{
+    display: block;
+    width: 5px;
+    height: 200px;
+}
+
+.chart-1{
+    background: #ffffff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.chartLine-1{
+    display: block;
+    width: 100%;
+    background-color: #cccccc;
+    height: 2px;
+}
+
+.avgVisitors-1{
+    font-size: 25px;
+}
+
+.avgChart-1{
+    width: 100%;
+    height: 100%;
+}
+
+.avgVisitors-2{
+    font-size: 24px;
+}
+
+.chartLine-2{
+    display: block;
+    width: 100%;
+    background-color: #cccccc;
+    height: 2px;
+}
+
+.chart-2{
+    width: 700px;
+    height: 700px;
+    background: #ffffff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.avgChart-2{
+    width: 700px;
+    height: 700px;
+}
+
+.heatBox{
+    background: #ffffff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.heatTitle{
+    font-size: 20px;
+}
+
+.heatLine{
+    display: block;
+    width: 100%;
+    background-color: #cccccc;
+    height: 2px;
+}
+
+.heatImage{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc;
+}

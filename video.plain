@@ -1,0 +1,96 @@
+select * from "Site";
+select * from "User";
+select * from "UserAndSite";
+select * from "Video";
+
+
+insert into "Site" values (1, 'retail store');
+insert into "Site" values (2, 'jewelry store');
+insert into "Site" values (3, 'clothes store');
+insert into "Site" values (4, 'juice store');
+insert into "Site" values (5, 'Resturant');
+insert into "Site" values (6, 'fruit shop');
+insert into "Site" values (7, 'vegetables store');
+
+insert into "User" values (1, 'turky', 'turky_email@mozej.com','13432432');
+insert into "User" values (2, 'mohammed', 'mohammed_email@mozej.com', '234435');
+insert into "User" values (3, 'ali', 'ali_email@mozej.com', '12');
+insert into "User" values (4, 'jaber', 'jaber_email@mozej.com', '345');
+insert into "User" values (5, 'khaled', 'khaled_email@mozej.com', '34544');
+insert into "User" values (6, 'maged', 'maged_email@mozej.com', '3123');
+
+
+insert into "UserAndSite" values (1, 1, 1 ,'Admin', 'Active');
+insert into "UserAndSite" values (2, 2, 1 , 'Admin', 'Active');
+insert into "UserAndSite" values (3, 1, 2 , 'User' , 'Active');
+insert into "UserAndSite" values (4, 3, 3, 'Admin' , 'Active');
+insert into "UserAndSite" values (5, 3, 2, 'User' , 'Active');
+insert into "UserAndSite" values (6, 4, 2 , 'Admin' , 'Active');
+insert into "UserAndSite" values (7, 2, 3 , 'User' , 'Active');
+insert into "UserAndSite" values (8, 4, 1 , 'User' , 'Active');
+insert into "UserAndSite" values (9, 5, 4 , 'Admin' , 'Active');
+insert into "UserAndSite" values (10, 5, 3 , 'Admin' , 'Active');
+insert into "UserAndSite" values (11, 2, 4 , 'User' , 'Active');
+insert into "UserAndSite" values (12, 6, 1 , 'User' , 'Active');
+insert into "UserAndSite" values (13, 6, 2 , 'Admin' , 'Active');
+insert into "UserAndSite" values (14, 6, 4 , 'Admin' , 'Pending');
+insert into "UserAndSite" values (15, 2, 5 , 'Admin' , 'Pending');
+insert into "UserAndSite" values (16, 2, 6 , 'User' , 'Pending');
+insert into "UserAndSite" values (17, 3, 5 , 'Admin' , 'Pending');
+insert into "UserAndSite" values (18, 3, 6 , 'User' , 'Active');
+insert into "UserAndSite" values (19, 6, 5 , 'User' , 'Pending');
+insert into "UserAndSite" values (20, 6, 6 , 'Admin' , 'Pending');
+insert into "UserAndSite" values (21, 3, 1 , 'Admin' , 'Active');
+insert into "UserAndSite" values (22, 3,  4, 'User' , 'Pending');
+
+
+
+
+insert into "Video" values (1, 1, 522, 1231, '2021-1-2' , 'Saturday' ,'January' , '\static\images\example.jpg' , 'vid1');
+insert into "Video" values (2, 1, 673, 7428, '2021-2-7' ,'Sunday' , 'February ' ,'\static\images\example1.jpg' , 'vid2');
+insert into "Video" values (3, 1, 243, 3782, '2021-5-22' ,'Saturday',   'May', '\static\images\example2.jpg' , 'vid3');
+insert into "Video" values (4, 1, 352, 1231, '2021-1-24' , 'Sunday' ,'January' , '\static\images\example3.jpg' , 'vid4');
+insert into "Video" values (5, 1, 383, 7428, '2021-2-25' ,'Thursday' , 'February' ,'\static\images\example4.jpg' , 'vid5');
+insert into "Video" values (6, 1, 243, 3782, '2021-5-22' ,'Saturday',   'May', '\static\images\example5.jpg' , 'vid6');
+insert into "Video" values (7, 1, 122, 1231, '2021-4-23' , 'Friday' ,'April' , '\static\images\example1.jpg' , 'vid7');
+insert into "Video" values (8, 1, 813, 7428, '2021-6-5' ,'Saturday' , 'June' ,'\static\images\example2.jpg' , 'vid8');
+insert into "Video" values (9, 1, 463, 3782, '2021-2-9' ,'Thursday',   'September', '\static\images\example3.jpg' , 'vid9');
+insert into "Video" values (10, 2, 764, 4273, '2021-3-21' , 'Sunday',  'March' , '\static\images\example4.jpg' , 'vid10');
+insert into "Video" values (11, 2, 830, 3321, '2021-6-23'  ,'Wednesday',  'June', '\static\images\example5.jpg' , 'vid11');
+insert into "Video" values (12, 2, 502, 8339, '2021-11-2' ,'Tuesday' , 'November' , '\static\images\example1.jpg' , 'vid12');
+insert into "Video" values (13, 2, 342, 8383, '2021-11-2' , 'Tuesday', 'November' , '\static\images\example2.jpg' , 'vid13');
+insert into "Video" values (14, 2, 764, 4273, '2021-3-24' , 'Wednesday',  'March' , '\static\images\example3.jpg' , 'vid14');
+insert into "Video" values (15, 2, 830, 3321, '2021-6-21'  ,'Monday',  'June', '\static\images\example4.jpg' , 'vid15');
+insert into "Video" values (16, 2, 502, 8339, '2021-10-24' ,'Sunday' , 'October' , '\static\images\example5.jpg' , 'vid16');
+insert into "Video" values (17, 2, 342, 8383, '2021-12-25' , 'Saturday', 'December' , '\static\images\example1.jpg' , 'vid17');
+insert into "Video" values (18, 3, 749, 1216, '2021-5-3' , 'Monday', 'May' , '\static\images\example2.jpg' , 'vid18');
+insert into "Video" values (19, 3, 454, 8339, '2021-6-12' ,'Saturday' , 'June', '\static\images\example3.jpg' , 'vid19');
+insert into "Video" values (20, 3, 449, 2003, '2021-2-12' , 'Friday', 'February' , '\static\images\example4.jpg' , 'vid20');
+insert into "Video" values (21, 3, 454, 6554, '2021-9-21' ,'Tuesday' , 'September', '\static\images\example5.jpg' , 'vid21');
+insert into "Video" values (22, 3, 649, 2353, '2021-11-22' , 'Monday', 'November' , '\static\images\example1.jpg' , 'vid22');
+insert into "Video" values (23, 3, 554, 7233, '2021-12-6' ,'Monday' , 'December', '\static\images\example2.jpg' , 'vid23');
+insert into "Video" values (24, 4, 100, 3493, '2021-8-13' ,'Friday', 'August', '\static\images\example3.jpg' , 'vid24');
+insert into "Video" values (25, 4, 120, 1221, '2021-9-16' ,'Thursday' , 'September ', '\static\images\example4.jpg' , 'vid25');
+insert into "Video" values (26, 4, 100, 4193, '2021-10-17' ,'Sunday', 'October', '\static\images\example5.jpg' , 'vid26');
+insert into "Video" values (27, 4, 120, 2234, '2021-10-19' ,'Tuesday' , 'October', '\static\images\example1.jpg' , 'vid27');
+insert into "Video" values (28, 5, 823, 4432, '2021-11-22'  ,'Monday',  'November', '\static\images\example2.jpg' , 'vid28');
+insert into "Video" values (29, 5, 932, 221, '2021-6-7' ,'Monday' , 'June', '\static\images\example3.jpg' , 'vid29');
+insert into "Video" values (30, 5, 513, 4432, '2021-12-12'  ,'Sunday',  'December', '\static\images\example4.jpg' , 'vid30');
+insert into "Video" values (31, 5, 611, 221, '2021-7-4' ,'Sunday' , 'July', '\static\images\example5.jpg' , 'vid31');
+insert into "Video" values (32, 6, 498, 3829, '2021-3-12' ,'Friday', 'March', '\static\images\example1.jpg' , 'vid32');
+insert into "Video" values (33, 6, 541, 4883, '2021-3-10' ,'Wednesday' , 'March', '\static\images\example2.jpg' , 'vid33');
+insert into "Video" values (34, 6, 693, 3829, '2021-2-11' ,'Thursday', 'February', '\static\images\example3.jpg' , 'vid34');
+insert into "Video" values (35, 6, 742, 4883, '2021-3-1' ,'Monday' , 'March', '\static\images\example4.jpg' , 'vid35');
+
+select "siteName" from "Site" inner join "UserAndSite" on
+"Site"."siteId" = "UserAndSite"."Site_id" inner join "User" on 
+"User"."userId" = "UserAndSite"."User_id" where "User"."name" = 'turky';
+
+select sum("number_of_vistors") from "Site" , "Video" where "Site"."siteName" = 'mgwhart' AND "Site"."siteId" = "Video"."site_id" AND "Video"."date" BETWEEN '2022-1-2' AND '2022-7-2';
+
+
+truncate table "UserAndSite" CASCADE;
+truncate table "User" CASCADE;
+truncate table "Site" CASCADE;
+truncate table "Video" CASCADE;
+

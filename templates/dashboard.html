@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.00, user-scalable=no">
+    <link rel="canonical" href="https://appseed.us/admin-dashboards/flask-boilerplate-dashboard-argon">
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body id="body">
+
+    <table class=table1" border="4">
+
+        
+        
+        <tr>
+
+            <td>
+                <table class="content-1" border="4" >
+
+                    <tr >
+                        <td>
+                            <div class="HorContainer"></div> 
+
+                            <form action="{{url_for('profile')}}" method="POST" id="profile">
+                                <input name="currentDate"  class="btn2" value="{{ currentDate }}" hidden>  
+                                <input name="startD"  class="btn2" value="{{ startD }}" hidden>  
+                                <input name="verify" type="text" id="verify" value="{{ verify }}" class="btn2" hidden>  
+                                <input name="endD"  class="btn2" value="{{ endD }}" hidden>  
+                                <input name="nbTotal"  class="btn2" value="{{ nbTotal }}" hidden> 
+                                <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}" hidden>  
+                                <input name="avgSpents"  class="btn2" value="{{ avgSpents }}" hidden>  
+                                <input name="mostVistors"  class="btn2" value="{{ mostVistors }}" hidden>  
+                                <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}" hidden>   
+                                <input name="M_DAY"  class="btn2" value="{{ M_DAY }}" hidden>   
+                                <input name="F_DAY"  class="btn2" value="{{ F_DAY }}" hidden>   
+                                <input name="currentSite"  class="btn2" value="{{ currentSite }}" hidden>   
+                                <input name="username"  class="btn2" value="{{ username }}" hidden> 
+                                <input name="userSites"  class="btn2" value="{{ userSites }}" hidden>     
+                                <input name="user"  class="btn2" value="{{ user }}" hidden>   
+                                <input name="graph"  class="btn2" value="{{ graph }}" hidden> 
+                                <input name="graphh"  class="btn2" value="{{ graphh }}" hidden>   
+                                <input name="adminSite"  class="btn2" value="{{ adminSite }}" hidden>     
+                                <input name="adminPermission"  class="btn2" value="{{ adminPermission }}" hidden>
+                                <input type="text" id="updateUsername" name="updateUsername"  class="btn2" hidden>
+                                <input type="text" id="updateFname" name="updateFname"  class="btn2" hidden>
+                                <input type="text" id="updateLname" name="updateLname"  class="btn2" hidden>        
+                                <input id="updateEmail" name="updateEmail"  class="btn2" hidden>  
+                                <input type name="updatePassword"   id="updatePassword" class="btn2" hidden>  
+                                <input name="updatecPassword"  id="updatecPassword" class="btn2" hidden>                   
+                                <input class="user" type="image" src="/static/img/user.png">
+
+                            </form>
+            
+                         
+
+
+                            <table cellspadding=63px"   width="200px" height="50px">
+        
+                                <tr>
+                                    <td>
+                                        <label class="name">{{ displayName }}</label>
+                                    </td>
+                                </tr>
+                                                                
+                                <tr>
+                                    <form action="{{url_for('index')}}""  method="POST">
+                                        <a class="logout"><input class="logout" type="submit" name="logout" value="Logout"></a>
+                                    </form>
+                                </tr>
+
+
+                                
+                                <tr>
+                                
+
+                               
+
+                                    {% if nbTotal != 0  %}
+                                    <img  class="visitors_number" src="/static/img/visitors-number.png">
+                                    <img  class="spent" src="/static/img/spent.png">
+                                    <img  class="most_site" src="/static/img/most-site.png">
+                                    <img  class="fewest_site" src="/static/img/fewest-site.png">
+
+
+                                    <h7 class="nbTotal">{{ nbTotal }}<br/>People</h7>
+                                    <h7 class="avgspent">{{ avgSpentm }} Min<br/> {{ avgSpents }} Sec</h7>
+                                    <h7 class="mostVistors">{{ mostVistors }}</h7>
+                                    <h7 class="fewestVistors">{{ fewestVistors }}</h7>
+
+
+                                    <div class="box4"></div>
+                            
+                                    <div class="header4"></div>
+                                    <img  class="fiveDaysLine" src="/static/img/line1.png">
+
+                                        <p class="FIVE_DAYS">Most and Fewest Days of Visitors</p>
+                                        <label class="MOST_DAYS">Most</label>
+                                        <span class="M_DAY1">
+                                            {% for x in M_DAY %}
+                                                <h7 class="mm_day">{{ x }} <br/></h7>  
+                                            {% endfor %}
+                                        </span>    
+                                        <label class="FEWEST_DAYS">Fewest</label>
+                                        <span class="F_DAY1">
+                                            {% for x in F_DAY %}
+                                            <label class="ff_day">{{ x }} <br/></label>
+                                            {% endfor %}
+                                        </span>
+                                    {% endif %}    
+                                </tr>
+
+
+
+
+                                <tr>
+                                    <div class="box1"></div>
+                                    <div class="header1"></div>
+                                    <label class="TIME_PERIOD">Time Period</label>
+                                    <div class="dateBox1"></div>
+                                    <div class="dateBox2"></div>
+
+                                    <form action="{{url_for('filter_date')}}"  method="POST">
+                                        <label class="fDate">From:</label>
+                                        <input class="date1" id="date1" type="date" name="Date1" value="{{ startD }}" min="{{ startD }}" max="{{ endD }}">
+                                        <input name="username"  class="btn2" value="{{ username }}" hidden>  
+                                        <input name="currentSite"  class="btn2" value="{{ currentSite }}" hidden>  
+                                        <input name="currentDate"  class="btn2" value="{{ currentDate }}" hidden>   
+                                        <input name="userSites"  class="btn2" value="{{ userSites }}" hidden>  
+                                        <label class="tDate">To:</label>
+                                        <input class="date2" id="date2" type="date"  name="Date2" value="{{ endD }}" min="{{ startD }}" max="{{ endD }}">
+                            
+                                        <input class="FILTER" type="submit" value="Filter">
+                                    </form>    
+                                    
+                                    <img  class="line1" src="/static/img/line1.png">
+
+                                    <img  class="dateLine" src="/static/img/line1.png">
+                                    <label class="currentDate">{{ currentDate }}</label>
+                                    
+                                    <label class="selectSite1">Select a site: </label>
+                         
+                                    <form action="{{url_for('select_management')}}" method="POST">
+                                        <input name="selectedSite"  class="btn2" id="selectedSite" hidden>   
+                                        <input type="checkbox" name="select"  class="btn" value="{{ username }}" id="btn">  
+                                        <input name="userSites"  class="btn2" value="{{ userSites }}" hidden>  
+                                        <input name="startD"  class="btn2" value="{{ startD }}" hidden>  
+                                        <input name="endD"  class="btn2" value="{{ endD }}" hidden>  
+
+                                        
+
+
+                                        <tr>
+                                            {% if nbTotal != 0 %}
+                                            <div class="chart-1"></div>
+                                            <div id='avgChart' class="avgChart-1"></div>
+                                            <img  class="chartLine-1" src="/static/img/line1.png">
+                                            <label class="avgVisitors-1">Average Number of Visitors Per Day</label>
+                                            {% endif %}
+                                            
+                                            {% if nbTotal != 0 %}
+                                            <div class="chart-2"></div>
+                                            <div id='avgChartt' class="avgChart-2"></div>
+                                            <img  class="chartLine-2" src="/static/img/line1.png">
+                                            <label class="avgVisitors-2">Average Number of Visitors Per Month</label>
+                                            {% endif %}
+                                        </tr>
+
+
+
+
+
+
+                                        <label class="siteLabel2" name="siteLabel2" id="siteLabel2">{{currentSite}}</label>  
+                                        <div class="select_site">  
+                                            <a><input type="submit" name="click" value="All sites" class="sSite" ></a>
+                                            
+                                             <div class="space"></div>
+
+                                            {% for x in userSites %}
+                                                
+                                                <a id="aSite"><input type="submit" name="click" value="{{ x }}" class="sSite" id="sSite"></a>
+                                                <div class="space"></div>
+                                            
+                                            {% endfor %}
+                       
+                                        </div> 
+                            
+                                    </form>
+
+                                </tr>
+
+
+
+         
+
+                                
+
+                                <tr>
+                                    <table class="imageTable">
+                                   
+                                    <span >
+
+                                 
+                                    
+                                    {% set count = namespace(value=0) %}
+                                    {% set bar = namespace(value=2100) %}
+                                    {% set nb = namespace(value=0) %}
+
+                                    {% if siteNames|length != 0 %} 
+                                    
+                                        {% for  i in range(0,(images)| length) %}
+
+                                        {% set image = images[nb.value] %}
+                                        {% set siteName = siteNames[nb.value] %}
+
+                                            {% if count.value < 3 %}
+                                        
+                                                <td style="padding-left: 83px;">
+                                            
+                                                    <div class="heatBox" >
+                                                        <label class="heatTitle">{{siteName}}</label>
+                                                        <img  class="heatLine" src="/static/img/line1.png">
+                                                    </div>
+                                                    
+                                                    <img class="heatImage" src="{{ image }}">
+                                                    
+                                                
+                                                </td>   
+                                                {% set bar.value = bar.value + 170 %}    
+                                                {% set count.value = count.value + 1 %}   
+                                                {% set nb.value = nb.value + 1 %}     
+                                            {% else %}    
+                                                <tr></tr>
+                                                <td style="padding-left: 83px;">
+                                            
+                                                    <div class="heatBox" >
+                                                        <label class="heatTitle">{{siteName}}</label>
+                                                        <img  class="heatLine" src="/static/img/line1.png">
+                                                    </div>
+                                                    
+                                                    <img class="heatImage" src="{{ image }}">
+                                                    
+                                                
+                                                </td>  
+                                                {% set count.value = 0 %}
+                                                {% set nb.value = nb.value + 1 %}    
+                                            {% endif %}  
+                                    
+                                        {% endfor %}
+
+                                    {% endif %}  
+                                     </span>
+
+                                    </table>
+                                </tr>
+
+                                
+                                
+                            </table>                                               
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+
+            <td>
+                <div class="VerContainer" id="VerContainer"></div> 
+                <form action="{{url_for('dashboard')}}" method="POST">
+                    <input type="image" class="logo" src="/static/img/logo.png">
+                    <img  class="dot" src="/static/img/dot.png">
+                    <input name="currentDate"  class="btn2" value="{{ currentDate }}" hidden>  
+                    <input name="startD"  class="btn2" value="{{ startD }}" hidden>  
+                    <input name="endD"  class="btn2" value="{{ endD }}" hidden>  
+                    <input name="nbTotal"  class="btn2" value="{{ nbTotal }}" hidden>  
+                    <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}" hidden>  
+                    <input name="avgSpents"  class="btn2" value="{{ avgSpents }}" hidden>
+                    <input name="mostVistors"  class="btn2" value="{{ mostVistors }}" hidden>
+                    <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}" hidden>
+                    <input name="M_DAY"  class="btn2" value="{{ M_DAY }}" hidden>
+                    <input name="F_DAY"  class="btn2" value="{{ F_DAY }}" hidden>
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}" hidden>
+                    <input name="username"  class="btn2" value="{{ username }}" hidden>
+                    <input name="userSites"  class="btn2" value="{{ userSites }}" hidden>
+                    <input name="user"  class="btn2" value="{{ user }}" hidden>
+                    <input name="graph"  class="btn2" value="{{ graph }}" hidden>
+                    <input name="graphh"  class="btn2" value="{{ graphh }}" hidden>
+                    
+                    <img class="dash" src="/static/img/dash-1.png">
+                    <input class="dashboard" type="submit">
+                </form>
+
+                <form action="{{url_for('video_management')}}" method="POST">
+                    <input name="currentDate"  class="btn2" value="{{ currentDate }}" hidden>  
+                    <input name="startD"  class="btn2" value="{{ startD }}" hidden>  
+                    <input name="endD"  class="btn2" value="{{ endD }}" hidden>  
+                    <input name="nbTotal"  class="btn2" value="{{ nbTotal }}" hidden> 
+                    <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}" hidden>  
+                    <input name="avgSpents"  class="btn2" value="{{ avgSpents }}" hidden>  
+                    <input name="mostVistors"  class="btn2" value="{{ mostVistors }}" hidden>  
+                    <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}" hidden>   
+                    <input name="M_DAY"  class="btn2" value="{{ M_DAY }}" hidden>   
+                    <input name="F_DAY"  class="btn2" value="{{ F_DAY }}" hidden>   
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}" hidden>   
+                    <input name="username"  class="btn2" value="{{ username }}" hidden> 
+                    <input name="userSites"  class="btn2" value="{{ userSites }}" hidden>     
+                    <input name="user"  class="btn2" value="{{ user }}" hidden>   
+                    <input name="graph"  class="btn2" value="{{ graph }}" hidden> 
+                    <input name="graphh"  class="btn2" value="{{ graphh }}" hidden>      
+                    <img class="video" src="/static/img/video.png">
+
+                    
+                    <input class="videoInput" type="button">
+                </form>
+
+                <form action="{{url_for('site_management')}}" method="POST">
+                    <input name="currentDate"  class="btn2" value="{{ currentDate }}" hidden>  
+                    <input name="startD"  class="btn2" value="{{ startD }}" hidden>  
+                    <input name="endD"  class="btn2" value="{{ endD }}" hidden>  
+                    <input name="nbTotal"  class="btn2" value="{{ nbTotal }}" hidden> 
+                    <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}" hidden>  
+                    <input name="avgSpents"  class="btn2" value="{{ avgSpents }}" hidden>  
+                    <input name="mostVistors"  class="btn2" value="{{ mostVistors }}" hidden>  
+                    <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}" hidden>   
+                    <input name="M_DAY"  class="btn2" value="{{ M_DAY }}" hidden>   
+                    <input name="F_DAY"  class="btn2" value="{{ F_DAY }}" hidden>   
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}" hidden>   
+                    <input name="username"  class="btn2" value="{{ username }}" hidden> 
+                    <input name="userSites"  class="btn2" value="{{ userSites }}" hidden>     
+                    <input name="user"  class="btn2" value="{{ user }}" hidden>   
+                    <input name="graph"  class="btn2" value="{{ graph }}" hidden> 
+                    <input name="graphh"  class="btn2" value="{{ graphh }}" hidden>   
+                    <input name="adminSite"  class="btn2" value="{{ adminSite }}" hidden>     
+                    <input name="adminPermission"  class="btn2" value="{{ adminPermission }}" hidden>                 
+                    <img class="site" src="/static/img/sManage.png">
+
+                    
+                    <input class="siteInput" type="submit">
+                </form>
+                
+            </td>
+
+            
+
+
+            <td>
+
+                
+            </td>
+
+
+        </tr>
+      
+
+    </table>
+
+
+        
+
+    
+
+
+    
+ 
+</body>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var graphs = {{graph | safe}};
+  Plotly.plot('avgChart',graphs,{});
+</script>
+
+<script type='text/javascript'>
+    var graphs = {{graphh | safe}};
+    Plotly.plot('avgChartt',graphs,{});
+</script>
+
+<script>
+
+    var currentSite = document.getElementById("siteLabel2").textContent
+    if(currentSite == "all sites"){
+        document.getElementById("siteLabel2").textContent = currentSite.charAt(0).toUpperCase()+ currentSite.slice(1)
+    }
+   
+
+
+
+
+    $(document).on('click', '.user', function(e) {
+
+            $("input[name='verify']").val("otp");
+            e.preventDefault();
+            setTimeout(function(){
+                $('form#profile').submit();
+                }, 1000);
+        });
+        
+    $(document).ready(function(){    
+         
+                var verify = "{{verify}}";
+                var code = "{{code}}";
+      
+
+        if (verify == "otp"){
+         
+                Swal.fire({
+                title: 'Account Management',
+                html: `  
+                
+                <hr style="margin-bottom: 6.5%;">
+                        
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-4 text-center">
+                            <div class="row">
+                            <div class="col-sm-12 mt-5 bgWhite" style="background:white; box-shadow:0px 3px 6px 0px #cacaca;">
+                                <div class="title" style="font-weight:600; margin-top:20px; font-size:24px">
+                                Verify OTP
+                                </div>
+                                <br>
+                                
+                                <form id="otp" action="" class="mt-5" >
+                                <input name="email"  class="btn2" value="{{ email }}" hidden>  
+                                <input name="otp1" id="otp1" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1 style="font-size:30px;background-color:#e9e3e3; display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                                <input name="otp2" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                                <input name="otp3" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                                <input name="otp4" class="otp" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                                </form>
+
+                                <br>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                            
+                        `,
+
+                confirmButtonText: 'Confirm',
+                showCloseButton: true,
+                showCancelButton: true,
+                showCloseButton: true,
+                     preConfirm: () => {
+                    var number = $("input[name='otp1']").val()+$("input[name='otp2']").val()+$("input[name='otp3']").val()+$("input[name='otp4']").val()
+                
+                    if(code != number){
+                        Swal.showValidationMessage(`Error OTP`)
+                        
+                    }else{
+                        $("input[name='verify']").val("profile")
+                        setTimeout(function(){
+                        $('form#profile').submit();
+                        }, 2000);
+                    }
+
+                }
+                })
+                var elts = document.getElementsByClassName('otp')
+                Array.from(elts).forEach(function(elt){
+                elt.addEventListener("keyup", function(event) {
+
+                    if (event.keyCode === 13 || elt.value.length == 1) {
+        
+                    elt.nextElementSibling.focus()
+                    }
+                });
+                })
+
+        
+              
+    }else if(verify == "profile"){
+            Swal.fire({
+            title: 'Account Management',
+            html: `  
+            
+            
+
+            <hr style="margin-bottom: 6.5%;">
+    
+
+                    
+            <table align="center">
+            <tr >
+                    <td style="position: relative; left: 10%; padding-bottom: 7%; ">
+                        <input class="username" id="username" type="image" src="/static/img/user.png" width="80px">
+
+                    </td>
+            </tr>
+            <tr style="background: #c2cbff15;">
+                <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+                     <b style="font-size: 20px; color:balck;">Name:  {{displayName}}  </b> 
+                </td>
+
+                <td style="text-align: left; vertical-align: middle;">
+                    <input class="disNmae" id="disNmae" type="button" value="Update" onclick="updateName()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+
+                </td>
+
+            </tr>
+
+            <tr style="background: #c5cdff1e;">
+                <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+                  <b style="font-size: 20px; color:balck">Username:  {{ username }}  </b>  
+                </td>
+
+                <td style="text-align: left; vertical-align: middle;">
+                    <input class="username" id="username" type="button" value="Update" onclick="updateUsername()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+
+                </td>
+
+            </tr>
+
+            <tr style="background: #c2cbff15;">
+                <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+                     <b style="font-size: 20px;">Email:  {{ email }}  </b> 
+                </td>
+
+                <td style="text-align: center; vertical-align: middle;">
+                    <input id="Email" type="submit" value="Update" onclick="updateEmail()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+                </td>
+            </tr>
+
+            <tr style="background: #c5cdff1e;"">
+                <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+                    <b style="font-size: 20px;">Password: *******</b> 
+                </td>
+
+                <td style="text-align: center; vertical-align: middle;">
+                    <input type="submit" value="Update" onclick="updatePassword()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+                </td>
+            </tr>
+
+            </table>
+                        
+                    `,
+
+            confirmButtonText: 'Cancel',
+            showCloseButton: true,
+            
+            }).then((result) => {
+
+                $("input[name='verify']").val("done");
+
+                setTimeout(function(){
+                    $('form#profile').submit();
+                    }, 2000);
+
+
+            })
+
+        }
+
+    });
+
+
+    function updateName() {
+
+      Swal.fire({
+      title: 'Update name',
+      html: `<input type="text" class-"UpFname" name="UpFname" id="UpFname" class="swal2-input" placeholder="Enter new first name">
+      <input type="text" class-"UpLname" name="UpLname" id="UpLname" class="swal2-input" placeholder="Enter new last name">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+    
+
+
+          const UpFname = Swal.getPopup().querySelector('#UpFname').value
+          const UpLname = Swal.getPopup().querySelector('#UpLname').value
+          var format = /[ `1234567890!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                               
+   
+          if (!UpFname) {
+              Swal.showValidationMessage(`The first name must not be empty`)
+          }else if( (UpFname.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`The first name must not contain space`)
+          }else if(format.test(UpFname)){
+              Swal.showValidationMessage(`The first name must not contain special characters or digits`)
+          }else if (!UpLname) {
+              Swal.showValidationMessage(`The last name must not be empty`)
+          }else if( (UpLname.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`The last name must not contain space`)
+          }else if(format.test(UpLname)){
+              Swal.showValidationMessage(`The last name must not contain special characters or digits`)
+          }else{
+              $("input[id='updateFname']").val($("input[id='UpFname']").val());
+              $("input[id='updateLname']").val($("input[id='UpLname']").val());
+              return { username: UpFname, username: UpLname}
+          }
+   
+      }
+      }).then((result) => {
+
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+     
+      })
+      var name = "{{ displayName }}"
+      name =  name.split(" ");
+      document.getElementById("UpFname").value = name[0];
+
+      document.getElementById("UpLname").value = name[1];    
+          
+   };
+
+
+
+
+ 
+    function updateUsername() {
+      
+      Swal.fire({
+      title: 'Update username',
+      html: `<input type="text" class-"UpUsername" name="UpUsername" id="UpUsername" class="swal2-input" placeholder="Enter new username">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+    
+
+
+          const UpUsername = Swal.getPopup().querySelector('#UpUsername').value
+          var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                               
+   
+          if (!UpUsername) {
+              alert(usernameIseExists)
+              Swal.showValidationMessage(`Username must not be empty`)
+          }else if( (UpUsername.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`Username must not contain space`)
+          }else if(format.test(UpUsername)){
+              Swal.showValidationMessage(`Username must not contain special characters`)
+          }else{
+              $("input[id='updateUsername']").val($("input[id='UpUsername']").val());
+              return { username: UpUsername }
+          }
+   
+      }
+      }).then((result) => {
+
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+     
+      })
+             
+      var name = "{{ username }}"
+
+      document.getElementById("UpUsername").value = name;
+ 
+
+
+   };
+   
+   
+    function updateEmail() {
+      
+      
+      Swal.fire({
+      title: 'Update email',
+      html: `<input type="email" id="Upemail" class="swal2-input" placeholder="Enter new email">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+          const email = Swal.getPopup().querySelector('#Upemail').value
+   
+          const checkEmail =  String(email)
+              .toLowerCase()
+              .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              );
+   
+                                          
+   
+          if (!checkEmail) {
+              Swal.showValidationMessage(`Please enter a valid eamil`)
+          }else{
+              $("input[id='updateEmail']").val($("input[id='Upemail']").val())
+      
+              return { email: email }
+          }
+         
+      }
+      }).then((result) => {
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+      })
+
+
+      document.getElementById("Upemail").value = "{{ email }}";
+
+ 
+                  
+          
+   };
+   
+   
+    function updatePassword() {
+      
+      
+      Swal.fire({
+      title: 'Update password',
+      html: `<input type="password" id="password" class="swal2-input" placeholder="Enter new password">
+      <input type="password" id="cpassword" class="swal2-input" placeholder="Confirm new password">
+      <span id="StrengthDisp" class="badge displayBadge" style="margin-top: 5%;display: none; text-align :center;">Weak</span>`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+          const password = Swal.getPopup().querySelector('#password').value
+          const cpassword = Swal.getPopup().querySelector('#cpassword').value
+          
+          let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')            
+   
+   
+   
+          
+          if(password =="" || cpassword=="") { 
+              Swal.showValidationMessage(`Password must not be empty`)
+          }else if ((password.indexOf(' ') >= 0) || (cpassword.indexOf(' ') >= 0)) {
+              Swal.showValidationMessage(`Password must not contain space`)
+          }else if(password != cpassword ){
+              Swal.showValidationMessage(`Password does not match`)
+          }else if(password.length<8){
+              Swal.showValidationMessage(`Password must contain at least 8 letter's`)
+          }else if(!strongPassword.test(password)) {
+              Swal.showValidationMessage(`Password must contain at least one capital letter, symbol and number`)
+          }else{
+              var uPassword = document.getElementById("password")
+              //var uCpassword = document.getElementById("cpassword")
+   
+              $("input[id='updatePassword']").val($("input[id='password']").val())
+              
+              return { password: password }
+          }
+         
+      }
+      }).then((result) => {
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+      })
+                  
+          
+   };
+
+
+   $(document).ready(function(){
+       var checkName = "{{updatedName}}";
+       var checkUsername = "{{updatedUsername}}";
+       var checkEmail = "{{updatedEmail}}";
+       var checkPassword = "{{updatedPassword}}";
+
+
+       if(checkName == "updated"){
+            {% set checkName = "False" %}
+            Swal.fire(
+                    'The name updated successfully',
+                    "",
+                    'success'
+                )
+        }else if(checkName == "no update"){
+            {% set checkName = "False" %}
+            Swal.fire(
+                    'The name was not updated successfully',
+                    "",
+                    'error'
+                )
+
+        }else if(checkUsername == "updated"){
+            {% set updatedUsername = "False" %}
+            Swal.fire(
+                    'The username updated successfully',
+                    "",
+                    'success'
+                )
+        }else if(checkUsername == "no update"){
+            {% set updatedUsername = "False" %}
+            Swal.fire(
+                    'The username is already exists',
+                    "",
+                    'error'
+                )
+
+        }else if(checkEmail == "updated"){
+            {% set updatedEmail = "False" %}
+            Swal.fire(
+            'The email updated successfully',
+            "",
+            'success'
+            )
+        }else if(checkEmail == "no update"){
+            {% set updatedEmail = "False" %}
+                Swal.fire({
+                icon: 'error',
+                title: 'The email is already exists',
+                text: '',
+                })
+        }else if(checkPassword == "updated"){
+            {% set updatedPassword = "False" %}
+            Swal.fire(
+            'The password updated successfully',
+            "",
+            'success'
+            )
+        }else if(checkPassword == "no update"){
+            {% set updatedPassword = "False" %}
+            Swal.fire({
+                icon: 'error',
+                title: 'The password update failed',
+                text: '',
+                })
+        }
+
+        }); 
+
+
+
+
+
+
+        $("#VerContainer").css("height","{{ bar.value+250 }}")
+
+
+       
+
+
+
+        {% if userSites == "" %} 
+            $("input[class='videoInput']").css("cursor","not-allowed");
+            $("img[class='video']").css("filter","grayscale(100%)");
+        {% else %}    
+            $("input[class='videoInput']").prop("type", "submit");
+            $("img[class='video']").css("filter","grayscale(0%)");
+        {% endif %}
+
+
+        
+        {% if clickFilter == "True" %}
+
+            Swal.fire({
+                        title: '<strong>Info</strong>',
+                        icon: 'info',
+                        html:
+                            'There is no information for this time period',
+                        showCloseButton: true,
+                        focusConfirm: false,
+                    }) 
+
+        {% endif %}               
+
+          
+            $(document).ready(function(){
+            
+                    var alerted = localStorage.getItem('alerted') || '';
+                        {% if alerted != 'yes' and userSites == "" and verify != "otp" and verify != "profile" %}
+
+                        Swal.fire({
+                                title: '<strong>Create Site</strong>',
+                                icon: 'info',
+                                html:
+                                    'There is no information, please create site first',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+
+
+                            localStorage.setItem('alerted','yes');
+            
+                        {% elif alerted != 'yes' and nbTotal == 0 and verify != "otp" and verify != "profile" %}
+
+
+                            Swal.fire({
+                                title: '<strong>Add Video</strong>',
+                                icon: 'info',
+                                html:
+                                    'There is no information, please add video first',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+
+
+
+                            localStorage.setItem('alerted','yes');
+                        {% endif %} 
+                
+                });
+
+
+                
+
+
+
+        $(document).ready(function(){
+
+            var size = (((window.screen.width - window.screen.height ) / 100 ) / 0.1)
+            plus  =  ((1.7 / 100 ) * 1000) - 5
+            if (window.screen.width> 2000){
+                size = size - plus
+            }else{
+                size = size - plus + 3
+            }
+
+            $("html").css("zoom",size+"%");
+
+        });
+
+
+
+
+        $("input[class='date1']").change(function(){
+            var min = $("input[class='date1']").val();
+            $("input[class='date2']").attr({"min" : min});
+        });
+
+
+        $("input[class='date2']").change(function(){
+            var max = $("input[class='date2']").val();
+            $("input[class='date1']").attr({"max" : max});
+        });
+
+</script>

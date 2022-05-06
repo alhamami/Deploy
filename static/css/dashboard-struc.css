@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');  
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --body-color: #F0F2F5;
+    --sidebar-color: #ffffff;
+	--sidebarText-color: #353535;
+	--profile-color: #F0F2F5;
+	--box-color: #e4e8ec;
+	--boxTop-color: rgb(255, 255, 255);
+	--text-color: #000000;
+}
+
+body{
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background-color: var(--body-color);
+}
+
+/*=============== Template: scroller, apperas only when the page is long ===============*/
+.scroller {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	scrollbar-width: thin;
+  }
+
+/*=============== Template: sidebar ===============*/
+.sidebar{
+	position: absolute; /*was relative*/
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 78px;
+	background: var(--sidebar-color);
+	padding: 6px 14px;
+	transition: all 0.5s ease;
+	z-index: 2;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.sidebar.active{
+	width: 220;
+}
+.sidebar .logo_content .logo_name{
+	color: var(--sidebarText-color);
+	display: flex;
+	height: 55px;
+	width: 100%;
+	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s ease;
+	right: 2px;
+}
+
+.sidebar .logo_content .logo{
+	position: relative;
+	color: var(--sidebarText-color);
+	display: flex;
+	height: 55px;
+	align-items: center;
+	right: 2px;
+	pointer-events: none;
+	transition: all 0.5s ease;
+	
+}
+
+.icon{
+	height: 55px;
+	width: 55px;
+	object-fit: cover;
+}
+
+.sidebar.active .logo_content .logo_name{
+	opacity: 1;
+	pointer-events: none;
+}
+
+.logo_content .logo i{
+	font-size: 28px;
+	margin-right: 5px;
+}
+
+.logo_content .logo .logo_name{
+	padding-left: 10px;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.sidebar ul{
+	margin-top: 20px;
+}
+
+.sidebar ul li{
+	position: relative;
+	height: 50px;
+	width: 100%;
+	margin: 0 0px;
+	list-style: none;
+}
+
+.btn2{
+    visibility: hidden;
+    background-color: #00000000;
+    color: rgba(0, 0, 0, 0);
+    border-color: #00000000;
+    position: absolute;
+    top: 23px;
+    right: -747px;
+}
+
+.sidebar ul li .tooltip{
+	position: absolute;
+	left: 145;
+	top: 25%;
+	transform:  translate(-50%, -50%);
+	border-radius: 6px;
+	height: 35px;
+	width: 150px;
+	background: #fff;
+	line-height: 35px;
+	text-align: center;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	transition: 0s;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sidebar.active ul li .tooltip{
+	display: none;
+}
+
+.sidebar ul li:hover .tooltip{
+	transition: all 0.5s ease;
+	z-index: 1; /* To appear above page content*/
+	opacity: 1;
+	top: 50%;
+}
+
+.sidebar ul li a{
+	color: var(--sidebarText-color);
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.1s ease;
+	border-radius: 6px; /* edge sharpness*/
+	white-space: nowrap;
+}
+
+.sidebar ul li .sidebar-element{
+	color: var(--sidebarText-color);
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.1s ease;
+	border-radius: 6px; /* edge sharpness*/
+	white-space: nowrap;
+}
+
+.sidebar ul li a:hover{
+	color: var(--sidebar-color);
+	background: var(--sidebarText-color);
+}
+
+.sidebar ul li .sidebar-element:hover{
+	color: var(--sidebar-color);
+	background: var(--sidebarText-color);
+}
+
+.sidebar ul li 	 i{
+	height: 50px;
+	min-width: 50px;
+	border-radius: 12px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.sidebar ul li .sidebar-element i{
+	height: 50px;
+	min-width: 50px;
+	border-radius: 12px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.sidebar .links_name{
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s ease;
+}
+
+.sidebar.active .links_name{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.sidebar .profile_content{
+	position: absolute;
+	color: var(--sidebarText-color);
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.sidebar .profile_content .profile{
+	position: relative;
+	padding: 10px 6px;
+	height: 60px;
+	background: var(--profile-color);
+	transition: all 0.4s ease;
+}
+
+.profile .profile_details img{
+	position: relative;
+	color: var(--sidebarText-color);
+	float: right;
+	top: 6px;
+	font-size: 30px;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	right: 4%;
+}
+
+.profile .name-conatiner{
+	position: relative;
+	color: var(--sidebarText-color);
+	float: right;	
+	right: 5%;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: right;
+}
+
+.profile .logout-container{
+	position: relative;
+	color: var(--sidebarText-color);
+	float: right;
+	right: 5%;
+}
+
+.profile .profile_details .name{
+	top: 6px;
+	font-size: 18px;
+	color: #24A9E2;
+	font-weight: bold;
+}
+
+.profile .profile_details .logout{
+	position: relative;
+	top: -15px;
+	background:none;
+	border:none;
+	margin:0;
+	padding:0;
+	font-size: 12px;
+	font-weight: 400;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.fit-switch{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+/*=============== Template: Topbar ===============*/
+.topbar{
+	position: relative; /*was relative*/
+	left: 78px;
+	top: 0;
+	height: 70px;
+	width: calc(100% - 78px);
+	background: var(--sidebar-color);
+	z-index: 1;
+	transition: all 0.5s ease;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.active ~ .topbar{
+	width: calc(100% - 220px);
+	left: 220px;
+}
+
+.topbar #sidebar_button{
+	position: absolute;
+	color: var(--sidebarText-color);
+	left: 3%;
+	top: 6px;
+	font-size: 30px;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	transform: translateX(-50%)
+}
+
+/*=============== Template: Home Content ===============*/
+.home_content{
+	position: relative; /*could be relative?*/
+	height: calc(100% - 70px);
+	width: calc(100% - 78px);
+	left: 78px;
+	transition: all 0.5s ease;
+}
+
+.home_content .text{
+	font-size: 100%;
+	font-weight: 500;
+	color: var(--text-color);
+}
+
+.sidebar.active ~ .home_content{
+	width: calc(100% - 220px);
+	left: 220px;
+}
+
+
+/*=============== Build your page from here ===============*/
+

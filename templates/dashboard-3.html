@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="https://appseed.us/admin-dashboards/flask-boilerplate-dashboard-argon">
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+</head>
+<body>
+
+    <table class=table1" border="4">
+
+        
+        
+        <tr>
+
+            <td>
+                <table class="content-1" border="4" >
+
+                    <tr >
+                        <td>
+                            <div class="HorContainer"></div> 
+                            <form action="{{url_for('update_profile')}}" method="POST" id="profile">
+                                <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                                <input name="startD"  class="btn2" value="{{ startD }}">  
+                                <input name="verify" type="text" id="verify" value="{{ verify }}" class="btn2">  
+                                <input name="endD"  class="btn2" value="{{ endD }}">  
+                                <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                                <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                                <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                                <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                                <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                                <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                                <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                                <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                                <input name="username"  class="btn2" value="{{ username }}"> 
+                                <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                                <input name="user"  class="btn2" value="{{ user }}">   
+                                <input name="graph"  class="btn2" value="{{ graph }}"> 
+                                <input name="graphh"  class="btn2" value="{{ graphh }}">   
+                                <input name="adminSite"  class="btn2" value="{{ adminSite }}">     
+                                <input name="adminPermission"  class="btn2" value="{{ adminPermission }}">
+                                <input type="text" id="updateUsername" name="updateUsername"  class="btn2">
+                                <input type="text" id="updateFname" name="updateFname"  class="btn2">
+                                <input type="text" id="updateLname" name="updateLname"  class="btn2">        
+                                <input id="updateEmail" name="updateEmail"  class="btn2">  
+                                <input type name="updatePassword"   id="updatePassword" class="btn2">  
+                                <input name="updatecPassword"  id="updatecPassword" class="btn2">                   
+                                <input class="user" type="image" src="/static/img/user.png">
+
+                            </form>
+
+                            <table cellspadding=63px"   width="200px" height="50px">
+        
+                                <tr>
+                                    <td>
+                                        <label class="name">{{ displayName }}</label>
+                                    </td>
+                                </tr>
+                                                                
+                                <tr>
+                                    <form action="{{url_for('index')}}"  method="POST">
+                                        <a class="logout"><input class="logout" type="submit" name="logout" value="Logout"></a>
+                                    </form>
+                                </tr>
+
+
+                                <tr>
+                                    <div class="box2"></div>
+                                    <div class="header2"></div>
+                                    <label class="SITE_MANAGEMENT">Site Management</label>
+
+                                    <form action="{{url_for('createSite')}}" method="POST" id="createSite">
+                                        <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                                        <input name="startD"  class="btn2" value="{{ startD }}">  
+                                        <input name="endD"  class="btn2" value="{{ endD }}">  
+                                        <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                                        <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                                        <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                                        <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                                        <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                                        <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                                        <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                                        <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                                        <input name="username"  class="btn2" value="{{ username }}"> 
+                                        <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                                        <input name="user"  class="btn2" value="{{ user }}">   
+                                        <input name="graph"  class="btn2" value="{{ graph }}"> 
+                                        <input name="graphh"  class="btn2" value="{{ graphh }}"> 
+                                    
+                                      
+                                        <input name="allUsers"  class="btn2" value="{{ allUsers }}"> 
+                                        <input name="adminAndUsers"  class="btn2" value="{{ adminAndUsers }}"> 
+                                        
+                                           
+
+                                        <label class="create_new_site">Create a New Site</label>
+                                        <input class="create_site" type="text" name="siteName" placeholder="Enter a site name" maxlength="20">
+                                        <button type="submit" class="create_site_btn" >Create</button>
+
+                                    </form>
+
+                                    <label class="adminListTitle">Admin sites:</label>
+                                    <div class="siteAdmin"></div>
+
+                                    
+                                    <form action="{{url_for('admin_sites')}}" method="POST" id="admin_sites">
+                                            <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                                            <input name="startD"  class="btn2" value="{{ startD }}">  
+                                            <input name="endD"  class="btn2" value="{{ endD }}">  
+                                            <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                                            <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                                            <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                                            <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                                            <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                                            <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                                            <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                                            <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                                            <input name="username"  class="btn2" value="{{ username }}"> 
+                                            <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                                            <input name="user"  class="btn2" value="{{ user }}">   
+                                            <input name="graph"  class="btn2" value="{{ graph }}"> 
+                                            <input name="graphh"  class="btn2" value="{{ graphh }}"> 
+                                            <input name="adminSite"  class="btn2" value="{{ adminSite }}">   
+                                            <input name="userSite"  class="btn2" value="{{ userSite }}">   
+                                            <input name="allUsers"  class="btn2" value="{{ allUsers }}"> 
+                                            <input name="adminAndUsers"  class="btn2" value="{{ adminAndUsers }}"> 
+                                            <input name="selectedAdmin"  class="btn2" id="selectedAdmin"> 
+                                            <input name="selectedUser"  class="btn2" id="selectedUser"> 
+                                            <input name="delPermissionValue"  class="btn2" id="delPermissionValue"> 
+                                            <input name="adminSiteBeforeUpdate"  class="btn2" id="adminSiteBeforeUpdate"> 
+                                            <input name="adminUpdatedSite"  class="btn2" id="adminUpdatedSite">
+                                            <input name="exitAdminSite"  class="btn2" id="exitAdminSite">
+                                            <input name="deletedSite"  class="btn2" id="deletedSite"> 
+                                          
+                                            
+                                            
+                                            <div class="adminList" id="style-1">
+                                                <br/>
+                                                {% set count = namespace(value=0) %}
+                                                {% for x in adminSite %}
+                                                
+                                                    <div class="adminSitesDiv" style="padding-bottom: 15px;" id="adminSitesDiv">{{ x }}   
+                                                                
+                                                        
+                                                        <input class="inviteUser" name="inviteUser" type="email" placeholder="Enter a user email" id="inviteUser">
+
+                                                        <input class="adminPermission" type="image" src="/static/img/inviteAdmin.png" id="adminPermission" title="Invite Admin">
+                                                        <input class="userPermission" type="image" src="/static/img/inviteUser.png" id="userPermission" title="Invite User">
+        
+                                                        
+
+                                                        
+                                                        <select class="delUser" id="delUser" name="delPermission" id="">
+                                                    
+                                                            {% for y in adminAndUsers[count.value] %}
+                                                            
+                                                            <option >{{ y }}</option>
+                                
+                                                           
+                                                            {% endfor %}
+                                                            <option class="list" value="list" hidden>There is no user</option>
+                                                            <input class="delPermission" type="image" src="/static/img/deleteUser.png" id="delPermission" title="Delete User">
+        
+                                                        </select>
+                                                        
+                                                        
+                                                        <input class="updateSiteName" name="updateSiteName" type="text" placeholder="  {{x}}" id="updateSiteName">
+                                                        <input name="currentAdminSite"  class="deletedSiteName" id="currentAdminSite" value="{{ x }}"> 
+                                                        <input class="deleteSite" name="deleteSite" type="submit" value="❌" id="deleteSite" title="Delete Site">
+                                                       
+                                                        <img class="exitAdmin" src="/static/img/exit-user.png">
+                                                        <input class="exitAdminSubmit" type="submit" value="" id="exitAdminSubmit" title="Leave Site">
+                                                        <input class="editSite" type="button" value="✏️️" id="editSite" title="Update">
+                                                        <img class="backSite" id="back" src="/static/img/back.png" title="Back">
+                                                        <input class="editSiteDone" type="button" value="✔️" id="editSiteDone" title="Update">
+
+                                                    </div>
+                                                    <hr/>
+                                                    {% set count.value = count.value + 1 %}
+                                                {% endfor %}
+                                            </div>
+                                        
+
+                                    </form>
+                                    
+
+                                    
+
+                                    <label class="userListTitle">User sites:</label>
+                                    <div class="siteUserDiv"></div>
+                                    
+
+                                    <form action="{{url_for('user_sites')}}" method="POST" id = "user_sites">
+                                        <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                                        <input name="startD"  class="btn2" value="{{ startD }}">  
+                                        <input name="endD"  class="btn2" value="{{ endD }}">  
+                                        <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                                        <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                                        <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                                        <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                                        <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                                        <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                                        <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                                        <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                                        <input name="username"  class="btn2" value="{{ username }}"> 
+                                        <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                                        <input name="user"  class="btn2" value="{{ user }}">   
+                                        <input name="graph"  class="btn2" value="{{ graph }}"> 
+                                        <input name="graphh"  class="btn2" value="{{ graphh }}"> 
+                                        <input name="userSiteBeforeUpdate"  class="btn2" id="userSiteBeforeUpdate">                                       
+                                        <div class="userList" id="style-2">
+                                            <br/>
+
+                                            {% for x in userSite %}
+                                            
+                                                <div class="userSitesDiv" style="padding-bottom: 15px;">{{ x }}   
+                                                    <input name="currentUserSite"  class="deletedSiteName" id="currentUserSite" value="{{ x }}"> 
+                                                    <img class="exitUser" src="/static/img/exit-user.png">
+                                                    <input class="exitUserSubmit" type="submit" value="" id="exitUserSubmit" title="Leave Site"> 
+                                                
+                                                </div>
+                                                <hr/>
+
+                                            {% endfor %}
+                                        </div>
+
+                            
+                                    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <label class="pendingListTitle">Invited sites:</label>
+                                    <div class="pendingDiv"></div>
+                                    
+
+                                    <form action="{{url_for('invited_sites')}}" method="POST" id = "invited_sites">
+                                        <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                                        <input name="startD"  class="btn2" value="{{ startD }}">  
+                                        <input name="endD"  class="btn2" value="{{ endD }}">  
+                                        <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                                        <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                                        <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                                        <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                                        <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                                        <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                                        <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                                        <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                                        <input name="username"  class="btn2" value="{{ username }}"> 
+                                        <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                                        <input name="user"  class="btn2" value="{{ user }}">   
+                                        <input name="graph"  class="btn2" value="{{ graph }}"> 
+                                        <input name="graphh"  class="btn2" value="{{ graphh }}"> 
+                                        <input name="acceptSite"  class="btn2" id="acceptSite">        
+                                        <input name="rejectSite"  class="btn2" id="rejectSite">                                   
+                                        <div class="pendingList" id="style-2">
+                                            <br/>
+
+                                            {% for x in pendingSites %}
+                                            
+                                                <div class="userSitesDiv" style="padding-bottom: 15px;">{{ x }}   
+                                                    <input name="invitedSite"  class="deletedSiteName" value="{{ x }}"> 
+                                                    <input class="acceptInvite" type="submit" value="Accept" title="Accept Site">
+                                                    <input class="rejectInvite" type="submit" value="Reject" title="Reject Site">
+                                                </div>
+                                                <hr/>
+
+                                            {% endfor %}
+                                        </div>
+
+                            
+                                    </form>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    
+                                    
+
+                                </tr>
+
+           
+
+
+                                
+                            </table>                                               
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+
+            <td>
+                <div class="VerContainer"></div> 
+                <form action="{{url_for('dashboard')}}" method="POST">
+                    <input type="image" class="logo" src="/static/img/logo.png">
+                    <img  class="dot" src="/static/img/dot.png">
+                    <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                    <input name="startD"  class="btn2" value="{{ startD }}">  
+                    <input name="endD"  class="btn2" value="{{ endD }}">  
+                    <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                    <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                    <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                    <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                    <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                    <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                    <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                    <input name="username"  class="btn2" value="{{ username }}"> 
+                    <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                    <input name="user"  class="btn2" value="{{ user }}">   
+                    <input name="graph"  class="btn2" value="{{ graph }}"> 
+                    <input name="graphh"  class="btn2" value="{{ graphh }}">     
+                    <img class="dash" src="/static/img/dash-1.png">
+                    <input class="dashboard" type="submit">
+                </form>
+
+                
+          
+                <form action="{{url_for('video_management')}}" method="POST">
+                    <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                    <input name="startD"  class="btn2" value="{{ startD }}">  
+                    <input name="endD"  class="btn2" value="{{ endD }}">  
+                    <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                    <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                    <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                    <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                    <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                    <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                    <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                    <input name="username"  class="btn2" value="{{ username }}"> 
+                    <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                    <input name="user"  class="btn2" value="{{ user }}">   
+                    <input name="graph"  class="btn2" value="{{ graph }}"> 
+                    <input name="graphh"  class="btn2" value="{{ graphh }}">              
+                    <img class="video" src="/static/img/video.png">
+
+                    
+                    <input class="videoInput" type="button">
+                </form>
+
+
+                
+
+
+                
+                <form action="{{url_for('site_management')}}" method="POST">
+                    <input name="currentDate"  class="btn2" value="{{ currentDate }}">  
+                    <input name="startD"  class="btn2" value="{{ startD }}">  
+                    <input name="endD"  class="btn2" value="{{ endD }}">  
+                    <input name="nbTotal"  class="btn2" value="{{ nbTotal }}"> 
+                    <input name="avgSpentm"  class="btn2" value="{{ avgSpentm }}">  
+                    <input name="avgSpents"  class="btn2" value="{{ avgSpents }}">  
+                    <input name="mostVistors"  class="btn2" value="{{ mostVistors }}">  
+                    <input name="fewestVistors"  class="btn2" value="{{ fewestVistors }}">   
+                    <input name="M_DAY"  class="btn2" value="{{ M_DAY }}">   
+                    <input name="F_DAY"  class="btn2" value="{{ F_DAY }}">   
+                    <input name="currentSite"  class="btn2" value="{{ currentSite }}">   
+                    <input name="username"  class="btn2" value="{{ username }}"> 
+                    <input name="userSites"  class="btn2" value="{{ userSites }}">     
+                    <input name="user"  class="btn2" value="{{ user }}">   
+                    <input name="graph"  class="btn2" value="{{ graph }}"> 
+                    <input name="graphh"  class="btn2" value="{{ graphh }}">  
+                         
+                    <img class="site" src="/static/img/sManage.png">
+
+                    
+                    <input class="siteInput" type="submit">
+                </form>
+
+
+
+
+
+            </td>
+
+
+        </tr>
+
+
+    </table>
+
+
+
+
+    
+
+
+    
+ 
+</body>
+
+
+      
+<script>
+
+$(document).ready(function(){                    
+        var size = (((window.screen.width - window.screen.height ) / 100 ) / 0.1)
+        plus  =  ((1.7 / 100 ) * 1000) - 5
+        if (window.screen.width> 2000){
+            size = size - plus
+        }else{
+            size = size - plus + 3
+        }
+
+        $("html").css("zoom",size+"%")
+});	
+	
+
+$(document).on('click', '.user', function(e) {
+
+$("input[name='verify']").val("otp");
+e.preventDefault();
+setTimeout(function(){
+    $('form#profile').submit();
+    }, 1000);
+});
+
+$(document).ready(function(){    
+         
+         var verify = "{{verify}}";
+         var code = "{{code}}";
+
+
+ if (verify == "otp"){
+  
+         Swal.fire({
+         title: 'Account Management',
+         html: `  
+         
+         <hr style="margin-bottom: 6.5%;">
+                 
+         <div class="container">
+             <div class="row justify-content-md-center">
+                 <div class="col-md-4 text-center">
+                     <div class="row">
+                     <div class="col-sm-12 mt-5 bgWhite" style="background:white; box-shadow:0px 3px 6px 0px #cacaca;">
+                         <div class="title" style="font-weight:600; margin-top:20px; font-size:24px">
+                         Verify OTP
+                         </div>
+                         <br>
+                         
+                         <form id="otp" action="" class="mt-5" >
+                         <input name="email"  class="btn2" value="{{ email }}" hidden>  
+                         <input name="otp1" id="otp1" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1 style="font-size:30px;background-color:#e9e3e3; display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         <input name="otp2" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         <input name="otp3" class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         <input name="otp4" class="otp" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 style="font-size:30px;background-color:#e9e3e3;display:inline-block;width:50px;height:50px;text-align:center;" maxlength="1">
+                         </form>
+
+                         <br>
+
+                     </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+                     
+                 `,
+
+         confirmButtonText: 'Confirm',
+         showCloseButton: true,
+         showCancelButton: true,
+         showCloseButton: true,
+              preConfirm: () => {
+             var number = $("input[name='otp1']").val()+$("input[name='otp2']").val()+$("input[name='otp3']").val()+$("input[name='otp4']").val()
+         
+             if(code != number){
+                 Swal.showValidationMessage(`Error OTP`)
+                 
+             }else{
+                 $("input[name='verify']").val("profile")
+                 setTimeout(function(){
+                 $('form#profile').submit();
+                 }, 2000);
+             }
+
+         }
+         })
+         var elts = document.getElementsByClassName('otp')
+         Array.from(elts).forEach(function(elt){
+         elt.addEventListener("keyup", function(event) {
+
+             if (event.keyCode === 13 || elt.value.length == 1) {
+ 
+             elt.nextElementSibling.focus()
+             }
+         });
+         })
+
+ 
+       
+}else if(verify == "profile"){
+     Swal.fire({
+     title: 'Account Management',
+     html: `  
+     
+     
+
+     <hr style="margin-bottom: 6.5%;">
+
+
+             
+     <table align="center">
+     <tr >
+             <td style="position: relative; left: 10%; padding-bottom: 7%; ">
+                 <input class="username" id="username" type="image" src="/static/img/user.png" width="80px">
+
+             </td>
+     </tr>
+     <tr style="background: #c2cbff15;">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+              <b style="font-size: 20px; color:balck;">Name:  {{displayName}}  </b> 
+         </td>
+
+         <td style="text-align: left; vertical-align: middle;">
+             <input class="disNmae" id="disNmae" type="button" value="Update" onclick="updateName()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+
+         </td>
+
+     </tr>
+
+     <tr style="background: #c5cdff1e;">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+           <b style="font-size: 20px; color:balck">Username:  {{ username }}  </b>  
+         </td>
+
+         <td style="text-align: left; vertical-align: middle;">
+             <input class="username" id="username" type="button" value="Update" onclick="updateUsername()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+
+         </td>
+
+     </tr>
+
+     <tr style="background: #c2cbff15;">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+              <b style="font-size: 20px;">Email:  {{ email }}  </b> 
+         </td>
+
+         <td style="text-align: center; vertical-align: middle;">
+             <input id="Email" type="submit" value="Update" onclick="updateEmail()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+         </td>
+     </tr>
+
+     <tr style="background: #c5cdff1e;"">
+         <td style="text-align: left; vertical-align: middle; width:81%; height:60px; padding: 5px; padding-left: 15px; padding-right:15px;">
+             <b style="font-size: 20px;">Password: *******</b> 
+         </td>
+
+         <td style="text-align: center; vertical-align: middle;">
+             <input type="submit" value="Update" onclick="updatePassword()" style="cursor: pointer; border-color: #005b7f00;  background: #005b7f00; color: blue;">
+         </td>
+     </tr>
+
+     </table>
+                 
+             `,
+
+     confirmButtonText: 'Cancel',
+     showCloseButton: true,
+     
+     }).then((result) => {
+
+         $("input[name='verify']").val("done");
+
+         setTimeout(function(){
+             $('form#profile').submit();
+             }, 2000);
+
+
+     })
+
+ }
+
+});
+
+
+
+function updateName() {
+
+Swal.fire({
+title: 'Update name',
+html: `<input type="text" class-"UpFname" name="UpFname" id="UpFname" class="swal2-input" placeholder="First name">
+<input type="text" class-"UpLname" name="UpLname" id="UpLname" class="swal2-input" placeholder="Last name">`,
+confirmButtonText: 'Update',
+focusConfirm: false,
+showCancelButton: true,
+showCloseButton: true,
+preConfirm: () => {
+
+
+
+const UpFname = Swal.getPopup().querySelector('#UpFname').value
+const UpLname = Swal.getPopup().querySelector('#UpLname').value
+var format = /[ `1234567890!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                   
+
+if (!UpFname) {
+  Swal.showValidationMessage(`The first name must not be empty`)
+}else if( (UpFname.indexOf(' ') >= 0)){
+  Swal.showValidationMessage(`The first name must not contain space`)
+}else if(format.test(UpFname)){
+  Swal.showValidationMessage(`The first name must not contain special characters or digits`)
+}else if (!UpLname) {
+  Swal.showValidationMessage(`The last name must not be empty`)
+}else if( (UpLname.indexOf(' ') >= 0)){
+  Swal.showValidationMessage(`The last name must not contain space`)
+}else if(format.test(UpLname)){
+  Swal.showValidationMessage(`The last name must not contain special characters or digits`)
+}else{
+  $("input[id='updateFname']").val($("input[id='UpFname']").val());
+  $("input[id='updateLname']").val($("input[id='UpLname']").val());
+  return { username: UpFname, username: UpLname}
+}
+
+}
+}).then((result) => {
+
+setTimeout(function(){
+$('form#profile').submit();
+}, 2000);
+
+})
+ 
+
+};
+
+
+function updateName() {
+      
+      Swal.fire({
+      title: 'Update name',
+      html: `<input type="text" class-"UpFname" name="UpFname" id="UpFname" class="swal2-input" placeholder="Enter new first name">
+      <input type="text" class-"UpLname" name="UpLname" id="UpLname" class="swal2-input" placeholder="Enter new last name">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+    
+
+
+          const UpFname = Swal.getPopup().querySelector('#UpFname').value
+          const UpLname = Swal.getPopup().querySelector('#UpLname').value
+          var format = /[ `1234567890!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                               
+   
+          if (!UpFname) {
+              Swal.showValidationMessage(`The first name must not be empty`)
+          }else if( (UpFname.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`The first name must not contain space`)
+          }else if(format.test(UpFname)){
+              Swal.showValidationMessage(`The first name must not contain special characters or digits`)
+          }else if (!UpLname) {
+              Swal.showValidationMessage(`The last name must not be empty`)
+          }else if( (UpLname.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`The last name must not contain space`)
+          }else if(format.test(UpLname)){
+              Swal.showValidationMessage(`The last name must not contain special characters or digits`)
+          }else{
+              $("input[id='updateFname']").val($("input[id='UpFname']").val());
+              $("input[id='updateLname']").val($("input[id='UpLname']").val());
+              return { username: UpFname, username: UpLname}
+          }
+   
+      }
+      }).then((result) => {
+
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+     
+      })
+             
+          
+   };
+
+
+function updateUsername() {
+      
+      Swal.fire({
+      title: 'Update username',
+      html: `<input type="text" class-"UpUsername" name="UpUsername" id="UpUsername" class="swal2-input" placeholder="Enter new username">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+    
+
+
+          const UpUsername = Swal.getPopup().querySelector('#UpUsername').value
+          var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+                               
+   
+          if (!UpUsername) {
+              alert(usernameIseExists)
+              Swal.showValidationMessage(`Username must not be empty`)
+          }else if( (UpUsername.indexOf(' ') >= 0)){
+              Swal.showValidationMessage(`Username must not contain space`)
+          }else if(format.test(UpUsername)){
+              Swal.showValidationMessage(`Username must not contain special characters`)
+          }else{
+              $("input[id='updateUsername']").val($("input[id='UpUsername']").val());
+              return { username: UpUsername }
+          }
+   
+      }
+      }).then((result) => {
+
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+     
+      })
+             
+          
+   };
+   
+   
+    function updateEmail() {
+      
+      
+      Swal.fire({
+      title: 'Update email',
+      html: `<input type="email" id="Upemail" class="swal2-input" placeholder="Enter new email">`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+          const email = Swal.getPopup().querySelector('#Upemail').value
+   
+          const checkEmail =  String(email)
+              .toLowerCase()
+              .match(
+              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              );
+   
+                                          
+   
+          if (!checkEmail) {
+              Swal.showValidationMessage(`Please enter a valid eamil`)
+          }else{
+              $("input[id='updateEmail']").val($("input[id='Upemail']").val())
+      
+              return { email: email }
+          }
+         
+      }
+      }).then((result) => {
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+      })
+                  
+          
+   };
+   
+   
+    function updatePassword() {
+      
+      
+      Swal.fire({
+      title: 'Update password',
+      html: `<input type="password" id="password" class="swal2-input" placeholder="Enter new password">
+      <input type="password" id="cpassword" class="swal2-input" placeholder="Confirm new password">
+      <span id="StrengthDisp" class="badge displayBadge" style="margin-top: 5%;display: none; text-align :center;">Weak</span>`,
+      confirmButtonText: 'Update',
+      focusConfirm: false,
+      showCancelButton: true,
+      showCloseButton: true,
+      preConfirm: () => {
+          const password = Swal.getPopup().querySelector('#password').value
+          const cpassword = Swal.getPopup().querySelector('#cpassword').value
+          
+          let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')            
+   
+   
+   
+          
+          if(password =="" || cpassword=="") { 
+              Swal.showValidationMessage(`Password must not be empty`)
+          }else if ((password.indexOf(' ') >= 0) || (cpassword.indexOf(' ') >= 0)) {
+              Swal.showValidationMessage(`Password must not contain space`)
+          }else if(password != cpassword ){
+              Swal.showValidationMessage(`Password does not match`)
+          }else if(password.length<8){
+              Swal.showValidationMessage(`Password must contain at least 8 letter's`)
+          }else if(!strongPassword.test(password)) {
+              Swal.showValidationMessage(`Password must contain at least one capital letter, symbol and number`)
+          }else{
+              var uPassword = document.getElementById("password")
+              //var uCpassword = document.getElementById("cpassword")
+   
+              $("input[id='updatePassword']").val($("input[id='password']").val())
+              
+              return { password: password }
+          }
+         
+      }
+      }).then((result) => {
+        setTimeout(function(){
+          $('form#profile').submit();
+        }, 2000);
+      })
+                  
+          
+   };
+	
+	
+	
+$(document).ready(function(){
+       var checkName = "{{updatedName}}";
+       var checkUsername = "{{updatedUsername}}";
+       var checkEmail = "{{updatedEmail}}";
+       var checkPassword = "{{updatedPassword}}";
+
+
+       if(checkName == "updated"){
+            {% set checkName = "False" %}
+            Swal.fire(
+                    'The name updated successfully',
+                    "",
+                    'success'
+                )
+        }else if(checkName == "no update"){
+            {% set checkName = "False" %}
+            Swal.fire(
+                    'The name was not updated successfully',
+                    "",
+                    'error'
+                )
+
+        }else if(checkUsername == "updated"){
+            {% set updatedUsername = "False" %}
+            Swal.fire(
+                    'The username updated successfully',
+                    "",
+                    'success'
+                )
+        }else if(checkUsername == "no update"){
+            {% set updatedUsername = "False" %}
+            Swal.fire(
+                    'The username is already exists',
+                    "",
+                    'error'
+                )
+
+        }else if(checkEmail == "updated"){
+            {% set updatedEmail = "False" %}
+            Swal.fire(
+            'The email updated successfully',
+            "",
+            'success'
+            )
+        }else if(checkEmail == "no update"){
+            {% set updatedEmail = "False" %}
+                Swal.fire({
+                icon: 'error',
+                title: 'The email is already exists',
+                text: '',
+                })
+        }else if(checkPassword == "updated"){
+            {% set updatedPassword = "False" %}
+            Swal.fire(
+            'The password updated successfully',
+            "",
+            'success'
+            )
+        }else if(checkPassword == "no update"){
+            {% set updatedPassword = "False" %}
+            Swal.fire({
+                icon: 'error',
+                title: 'The password update failed',
+                text: '',
+                })
+        }
+
+        }); 
+
+
+
+
+
+
+
+    $("img[class='backSite']").css("display","none");
+    $("input[class='updateSiteName']").css("display","none");
+    $("input[class='editSiteDone']").css("display","none");
+
+
+
+
+    $(document).on('click', '.delPermission', function() {
+
+        var check = $(this).closest("div.adminSitesDiv").find(":selected").text();
+
+        if (check == ""){
+            $(this).closest("div.adminSitesDiv").find(":selected").text("There is no user's");
+
+        }else if(check == "There is no user's"){
+
+            $(this).closest("div.adminSitesDiv").find("input[class='delPermission']").prop("type", "button");
+
+            Swal.fire({
+                            title: '<strong>No User\'s</strong>',
+                            icon: 'error',
+                            html:
+                                'There\'s no user to delete !',
+                            showCloseButton: true,
+                            focusConfirm: false,
+                        })
+
+            setTimeout(function(){
+                $("input[class='delPermission']").prop("type", "image");
+            }, 0);
+                
+        }
+    });
+
+
+
+
+    $(document).on('click', '.adminPermission', function(e) {
+
+            if( $(this).closest("div.adminSitesDiv").find("input[class='inviteUser']").val()  == "" | !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($(this).closest("div.adminSitesDiv").find("input[class='inviteUser']").val()))){
+                $(this).closest("div.adminSitesDiv").find("input[class='adminPermission']").prop("type", "button");
+                
+
+                    Swal.fire({
+                                    title: '<strong>Enter Email</strong>',
+                                    icon: 'error',
+                                    html:
+                                        'Please enter a valid email !',
+                                    showCloseButton: true,
+                                    focusConfirm: false,
+                                })
+                
+                                 
+                         
+                setTimeout(function(){
+                    $("input[class='adminPermission']").prop("type", "image");
+                }, 0);
+                         
+
+                var input = document.getElementById ("inviteUser");
+                $(this).closest("div.adminSitesDiv").find("input[class='inviteUser']").text(input.placeholder)
+                                    
+        
+            }else{   
+                var selectedAdmin = document.getElementById("selectedAdmin")
+                var inviteUser = $(this).closest("div.adminSitesDiv").find("input[name='inviteUser']").val();
+                selectedAdmin.value = inviteUser
+
+               
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: selectedAdmin.value+' has been invited',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+               
+                e.preventDefault();
+          
+
+                var adminSiteBeforeUpdate = document.getElementById("adminSiteBeforeUpdate") 
+                var currentAdminSite = $(this).closest("div.adminSitesDiv").find("input[name='currentAdminSite']").val();
+                adminSiteBeforeUpdate.value = currentAdminSite
+             
+                setTimeout(function(){
+                    $('form#admin_sites').submit();
+                }, 1500);
+         
+            }
+
+  
+
+     });
+   
+
+    
+     $(document).on('click', '.userPermission', function() {
+
+        
+
+        if($(this).closest("div.adminSitesDiv").find("input[class='inviteUser']").val() == "" || !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($(this).closest("div.adminSitesDiv").find("input[class='inviteUser']").val()))){
+            $(this).closest("div.adminSitesDiv").find("input[class='userPermission']").prop("type", "button");
+            
+      
+                Swal.fire({
+                                title: '<strong>Enter Email</strong>',
+                                icon: 'error',
+                                html:
+                                    'Please enter a valid email !',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+               
+            setTimeout(function(){
+                $("input[class='userPermission']").prop("type", "image");
+            }, 0);
+
+            var input = document.getElementById ("inviteUser");
+            $(this).closest("div.adminSitesDiv").find("input[class='inviteUser']").text(input.placeholder)
+                            
+        }else{     
+            var selectedUser = document.getElementById("selectedUser")
+            var inviteUser = $(this).closest("div.adminSitesDiv").find("input[name='inviteUser']").val();
+            selectedUser.value = inviteUser
+
+            Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: selectedAdmin.value+' has been invited',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                setTimeout(function(){
+                    $("input[class='adminPermission']").prop("type", "image");
+                }, 0);
+
+
+            var adminSiteBeforeUpdate = document.getElementById("adminSiteBeforeUpdate") 
+            var currentAdminSite = $(this).closest("div.adminSitesDiv").find("input[name='currentAdminSite']").val();
+            adminSiteBeforeUpdate.value = currentAdminSite
+
+        }
+     });
+
+
+
+    
+
+
+
+     $(document).on('click', '.deleteSite', function(e) {
+        e.preventDefault();
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Deleted!',
+            'Your site has been deleted.',
+            'success'
+            )
+
+            var deletedSite = document.getElementById("deletedSite")
+            var val = $(this).closest("div.adminSitesDiv").find("input[name='currentAdminSite']").val();
+            deletedSite.value = val
+            
+            setTimeout(function(){
+                $('form#admin_sites').submit();
+             }, 2000);
+
+            }
+
+        })
+  
+     });
+
+
+    
+
+
+     $(document).on('click', '.delPermission', function(e) {
+        e.preventDefault();
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, delete user!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'user Deleted!',
+            'the user has been deleted.',
+            'success'
+            )
+
+            var delPermissionValue = document.getElementById("delPermissionValue")
+            var val = $(this).closest("div.adminSitesDiv").find("select[name='delPermission']").val();
+            delPermissionValue.value = val
+            var adminSiteBeforeUpdate = document.getElementById("adminSiteBeforeUpdate") 
+            var currentAdminSite = $(this).closest("div.adminSitesDiv").find("input[name='currentAdminSite']").val();
+            adminSiteBeforeUpdate.value = currentAdminSite
+            
+            setTimeout(function(){
+                $('form#admin_sites').submit();
+             }, 2000);
+
+            }
+
+        })
+  
+     });
+
+     $(document).on('click', '.editSite', function() {
+        $(this).closest("div.adminSitesDiv").find("img[class='backSite']").css("display","block");
+        $(this).closest("div.adminSitesDiv").find("input[class='updateSiteName']").css("display","block");
+        $(this).closest("div.adminSitesDiv").find("input[class='editSiteDone']").css("display","block");
+        $(this).closest("div.adminSitesDiv").find("input[class='editSite']").css("display","none");
+        $(this).closest("div.adminSitesDiv").find("input[class='editSite']").prop("type", "button");
+     });
+
+
+     $(document).on('click', '.backSite', function() {
+        $(this).closest("div.adminSitesDiv").find("img[class='backSite']").css("display","none");
+        $(this).closest("div.adminSitesDiv").find("input[class='updateSiteName']").css("display","none");
+        $(this).closest("div.adminSitesDiv").find("input[class='editSiteDone']").css("display","none");
+        $(this).closest("div.adminSitesDiv").find("input[class='editSite']").css("display","block");
+        $(this).closest("div.adminSitesDiv").find("input[class='editSite']").prop("type", "button");
+     });
+
+
+     $(document).on('click', '.editSiteDone', function() {
+    
+        if(/^\s/.test($("input[class='updateSiteName']").val()) || $(this).closest("div.adminSitesDiv").find("input[class='updateSiteName']").val()== ""){
+                var input = document.getElementById ("updateSiteName");
+                input.value = input.placeholder ;
+        }else{
+
+            var adminUpdatedSite = document.getElementById("adminUpdatedSite")
+            var updateSiteName = $(this).closest("div.adminSitesDiv").find("input[class='updateSiteName']").val();
+            adminUpdatedSite.value = updateSiteName
+            currentAdminSite = $(this).closest("div.adminSitesDiv").find("input[name='currentAdminSite']").val();
+            adminSiteBeforeUpdate = document.getElementById("adminSiteBeforeUpdate")
+            adminSiteBeforeUpdate.value = currentAdminSite
+
+            
+            $("input[class='editSiteDone']").prop("type", "submit");
+            
+        }
+     });
+
+
+
+     {%if checkSiteName == True %}
+     
+            Swal.fire({
+                                title: '<strong>Site name</strong>',
+                                icon: 'success',
+                                html:
+                                'The site updated successfully!',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+         {% set checkSiteName = None %}
+   
+    {% elif checkSiteName == False %}    
+     
+        Swal.fire({
+                                    title: '<strong>Site was not updated</strong>',
+                                    icon: 'error',
+                                    html:
+                                    'The site already exists!',
+                                    showCloseButton: true,
+                                    focusConfirm: false,
+                                })
+        checkSiteName = None
+        {% set checkSiteName = None %}
+
+ 
+            
+    {% endif%}
+
+
+
+
+
+    $(document).on('click', '.exitAdminSubmit', function(e) {
+        e.preventDefault();
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, leave it!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Leaved!',
+            'Your site has been leaved.',
+            'success'
+            )
+
+            var exitSite = document.getElementById("exitAdminSite")
+            var currentSite = $(this).closest("div.adminSitesDiv").find("input[name='currentAdminSite']").val();
+            exitSite.value = currentSite
+            
+            setTimeout(function(){
+                $('form#admin_sites').submit();
+             }, 2000);
+
+            }
+
+        })
+  
+     });
+
+
+    $(document).on('click', '.exitUserSubmit', function(e) {
+        e.preventDefault();
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, leave it!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Leaved!',
+            'Your site has been leaved.',
+            'success'
+            )
+
+            var userSiteBeforeUpdate = document.getElementById("userSiteBeforeUpdate")
+            var currentSite = $(this).closest("div.userSitesDiv").find("input[name='currentUserSite']").val();
+            userSiteBeforeUpdate.value = currentSite
+            
+            setTimeout(function(){
+                $('form#user_sites').submit();
+             }, 2000);
+
+            }
+
+        })
+  
+    });
+
+
+
+
+    $(document).on('click', '.acceptInvite', function(e) {
+        e.preventDefault();
+        Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: ' the site has been accepted',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then((result) => {
+
+                    var acceptSite = document.getElementById("acceptSite")
+                    var invitedSite = $(this).closest("div.userSitesDiv").find("input[name='invitedSite']").val();
+                    acceptSite.value = invitedSite
+
+                    setTimeout(function(){
+                        $('form#invited_sites').submit();
+                        }, 1000);
+
+
+                    })
+
+
+
+
+    
+     });
+
+
+     $(document).on('click', '.rejectInvite', function(e) {
+        e.preventDefault();
+        Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: ' the site has been rejected',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then((result) => {
+
+        
+                    var rejectSite = document.getElementById("rejectSite")
+                    var invitedSite = $(this).closest("div.userSitesDiv").find("input[name='invitedSite']").val();
+                    rejectSite.value = invitedSite
+
+                    setTimeout(function(){
+                        $('form#invited_sites').submit();
+                        }, 1000);
+
+
+                    })
+     
+     });
+
+     $(document).on('click', '.create_site_btn', function(e) {
+
+        let val = $("input[class='create_site']").val();
+        let alphabet = /[a-zA-Z]/, //letters a to z and A to Z
+		numbers = /[0-9]/; //0 to 9
+
+
+        if (val == ""){
+            e.preventDefault();
+            Swal.fire({
+                                title: '<strong>Site name</strong>',
+                                icon: 'info',
+                                html:
+                                'The site name can not be empty!',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+        }else if(/^\s/.test(val)){
+            e.preventDefault();
+            Swal.fire({
+                                title: '<strong>Site name</strong>',
+                                icon: 'info',
+                                html:
+                                'The site name must not start with space!',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+
+        }
+    });
+
+    {%if checkCreateStie == True %}
+            Swal.fire({
+                                title: '<strong>Site created</strong>',
+                                icon: 'success',
+                                html:
+                                'The site created successfully!',
+                                showCloseButton: true,
+                                focusConfirm: false,
+                            })
+        
+
+    {% elif checkCreateStie == False %}    
+        Swal.fire({
+                                    title: '<strong>Site was not created</strong>',
+                                    icon: 'error',
+                                    html:
+                                    'The site already exists!',
+                                    showCloseButton: true,
+                                    focusConfirm: false,
+                                })
+            
+    {% endif%}
+
+
+
+
+     {% if userSites == "" %} 
+            $("input[class='videoInput']").css("cursor","not-allowed");
+            $("img[class='video']").css("filter","grayscale(100%)");
+    {% else %}    
+            $("input[class='videoInput']").prop("type", "submit");
+            $("img[class='video']").css("filter","grayscale(0%)");
+    {% endif %}
+
+
+
+
+      
+</script>
+
+
+
+
+
+
+
