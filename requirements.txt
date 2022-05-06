@@ -43,6 +43,7 @@ npm==0.1.1
 numpy==1.22.1
 opencv-contrib-python==4.5.5.62
 opencv-python==4.5.5.62
+opencv-python-headless==4.2.0.32
 optional-django==0.1.0
 packaging==21.3
 pandas==1.4.0
