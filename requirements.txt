@@ -44,7 +44,7 @@ opencv-contrib-python==4.5.5.62
 opencv-python==4.5.5.62
 opencv-python-headless==4.5.5.64
 packaging==21.3
-pandas==1.4.0
+pandas==1.1.5
 passlib==1.7.1
 Pillow==9.0.0
 pipenv==2022.4.8
