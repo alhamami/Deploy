@@ -1072,21 +1072,21 @@ def create_app(test_config=None):
 
     @app.errorhandler(NotFound)
     def handle_not_found(e):
-        return render_template('error/404.html', title="404 Not Found")
+        return render_template('404.html', title="404 Not Found")
 
 
     @app.errorhandler(InternalServerError)
     def handle_internal_server_error(e):
-        return render_template('error/500.html', title='500 Internal Server Error')
+        return render_template('500.html', title='500 Internal Server Error')
 
 
     @app.errorhandler(MethodNotAllowed)
     def method_not_allowed(e):
-        return render_template('error/405.html', title="405 Method Not Allowed")
+        return render_template('405.html', title="405 Method Not Allowed")
 
     @app.errorhandler(BadRequest)
     def method_not_allowed(e):
-        return render_template('error/405.html', title="400 Method Not Allowed")
+        return render_template('405.html', title="400 Method Not Allowed")
 
 
 
